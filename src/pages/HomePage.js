@@ -34,7 +34,7 @@ import logoIcon from '../assets/images/sas_logo_no.png';
 
 const HomePage = ({ onLogout }) => {
 
-    // تعريف بيانات بطاقات الميزات مع تخصيص ألوان الأيقونات والخلفيات المربعة الفخمة
+    // تعريف بيانات بطاقات الميزات بتنسيق الألوان الفاخر المطابق للنموذج المطلوب
     const featureCards = [
         {
             title: 'إدارة المدرسة',
@@ -177,71 +177,84 @@ const HomePage = ({ onLogout }) => {
     return (
         <Box sx={{ 
             flexGrow: 1, 
-            p: 2, 
+            p: 0, 
             position: 'relative', 
             userSelect: 'none', 
-            background: 'linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%)', 
+            background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)', 
             minHeight: '100vh', 
             fontFamily: 'Cairo, sans-serif', 
             direction: 'rtl' 
         }}>
-            {/* زر تسجيل الخروج */}
-            {onLogout && (
-                <Box sx={{ position: 'absolute', top: 20, left: 20, zIndex: 1000 }}>
-                    <button
-                        onClick={onLogout}
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            padding: '8px 18px',
-                            borderRadius: '10px',
-                            background: '#7f1d1d',
-                            color: '#fff',
-                            border: 'none',
-                            cursor: 'pointer',
-                            fontWeight: 'bold',
-                            boxShadow: '0 4px 6px rgba(127, 29, 29, 0.2)',
-                            transition: 'all 0.3s ease'
-                        }}
-                        onMouseOver={(e) => e.target.style.background = '#991b1b'}
-                        onMouseOut={(e) => e.target.style.background = '#7f1d1d'}
-                    >
-                        <FaSignOutAlt style={{ marginLeft: '8px' }} /> تسجيل الخروج
-                    </button>
-                </Box>
-            )}
-
-            {/* العنوان والشعار */}
+            {/* الشريط العلوي الفخم المماثل للنموذج */}
             <Box sx={{
-                position: 'absolute',
-                top: 10,
-                right: 20,
-                zIndex: 1000,
+                width: '100%',
+                backgroundColor: '#0f172a',
+                color: '#ffffff',
+                py: 1.5,
+                px: 3,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start',
-                p: 1,
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                borderBottom: '3px solid #d97706',
+                position: 'sticky',
+                top: 0,
+                zIndex: 1000
             }}>
-                <img src={logoIcon} alt="SAS Logo" style={{ height: '75px', marginRight: '15px', filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.1))' }} />
-                <Box sx={{ ml: 2 }}>
-                    <Typography variant="h6" component="h1" sx={{ fontWeight: '800', color: '#064e3b', fontSize: '22px', letterSpacing: '0.5px' }}>
+                {/* الجهة اليمنى: الشعار واسم النظام */}
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <img src={logoIcon} alt="SAS Logo" style={{ height: '45px', marginLeft: '12px', filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.2))' }} />
+                    <Typography variant="h6" sx={{ fontWeight: '800', color: '#ffffff', fontSize: '18px', letterSpacing: '0.5px' }}>
                         نظام إدارة المدرسة SAS
                     </Typography>
                 </Box>
+
+                {/* الجهة اليسرى: زر تسجيل الخروج واسم المستخدم */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, background: 'rgba(255,255,255,0.08)', px: 2, py: 0.6, borderRadius: '8px' }}>
+                        <Typography variant="body2" sx={{ color: '#94a3b8', fontSize: '12px' }}>مدير النظام</Typography>
+                        <Typography variant="body1" sx={{ color: '#facc15', fontWeight: 'bold', fontSize: '14px' }}>Admin</Typography>
+                    </Box>
+                    {onLogout && (
+                        <button
+                            onClick={onLogout}
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                padding: '6px 16px',
+                                borderRadius: '8px',
+                                background: '#dc2626',
+                                color: '#fff',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontWeight: 'bold',
+                                fontSize: '13px',
+                                boxShadow: '0 2px 4px rgba(220, 38, 38, 0.3)',
+                                transition: 'all 0.3s ease'
+                            }}
+                            onMouseOver={(e) => e.target.style.background = '#b91c1c'}
+                            onMouseOut={(e) => e.target.style.background = '#dc2626'}
+                        >
+                            <FaSignOutAlt style={{ marginLeft: '6px' }} /> تسجيل الخروج
+                        </button>
+                    )}
+                </Box>
             </Box>
 
-            {/* المحتوى الرئيسي للبطاقات */}
-            <Stack spacing={1} sx={{ my: 2, marginTop: '110px', pb: 8 }}>
-                <Box sx={{ textAlign: 'center', mb: 3 }}>
-                    <Typography variant="h4" component="h2" sx={{ fontSize: '1.8rem', fontWeight: '800', color: '#064e3b', mb: 1, letterSpacing: '0.5px' }}>
+            {/* محتوى الصفحة */}
+            <Box sx={{ p: 3, pb: 10 }}>
+                {/* العنوان الرئيسي */}
+                <Box sx={{ textAlign: 'center', my: 3 }}>
+                    <Typography variant="h4" component="h2" sx={{ fontSize: '1.9rem', fontWeight: '800', color: '#1e293b', mb: 1, letterSpacing: '0.5px' }}>
                         لوحة التحكم الرئيسية
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#64748b', fontSize: '14px', fontWeight: '500' }}>
+                    <Typography variant="body2" sx={{ color: '#64748b', fontSize: '14px', fontWeight: '600' }}>
                         مرحباً بك في نظام إدارة المدرسة — اختر الوحدة التي تريد العمل عليها
                     </Typography>
                 </Box>
 
-                <Grid container spacing={2.5} justifyContent="center" sx={{ px: 2 }}>
+                {/* شبكة البطاقات بتصميم المطابقة الدقيقة */}
+                <Grid container spacing={2.5} justifyContent="center" sx={{ px: 1 }}>
                     {featureCards.map((card, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
                             <MuiLink
@@ -257,48 +270,47 @@ const HomePage = ({ onLogout }) => {
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'space-between',
-                                        p: 2.5,
-                                        borderRadius: '18px',
-                                        border: '1px solid #e2e8f0',
-                                        borderTop: '5px solid #d97706', // حافة ذهبية ملكية فاخرة بالأعلى
-                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                                        p: 2.2,
+                                        borderRadius: '16px',
+                                        border: '1px solid #cbd5e1',
+                                        backgroundColor: '#ffffff',
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
                                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                         '&:hover': {
-                                            transform: 'translateY(-6px)',
-                                            boxShadow: '0 20px 25px -5px rgba(217, 119, 6, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                                            transform: 'translateY(-5px)',
+                                            boxShadow: '0 12px 20px -3px rgba(30, 41, 59, 0.12)',
                                             borderColor: '#d97706'
                                         },
-                                        cursor: 'pointer',
-                                        background: '#ffffff'
+                                        cursor: 'pointer'
                                     }}
                                 >
                                     <CardContent sx={{ p: '0 !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                                        {/* صف الأيقونة الملونة الكبيرة في الأعلى بجانب العنوان بنفس تصميم النموذج الفخم */}
-                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: 'space-between' }}>
-                                            <Typography variant="subtitle1" component="h3" sx={{ color: '#0f172a', fontWeight: '700', fontSize: '15px', lineHeight: 1.4, textAlign: 'right' }}>
-                                                {card.title}
-                                            </Typography>
+                                        {/* الأيقونة في اليمين وبجانبها العنوان والتفاصيل مثل النموذج تماماً */}
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
                                             <Box 
                                                 sx={{ 
-                                                    width: '52px', 
-                                                    height: '52px', 
-                                                    borderRadius: '14px', 
+                                                    width: '50px', 
+                                                    height: '50px', 
+                                                    borderRadius: '12px', 
                                                     background: card.bg, 
                                                     display: 'flex', 
                                                     alignItems: 'center', 
                                                     justifyContent: 'center',
                                                     flexShrink: 0,
-                                                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
+                                                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.03)'
                                                 }}
                                             >
                                                 {React.createElement(card.icon, {
-                                                    style: { fontSize: '26px', color: card.color }
+                                                    style: { fontSize: '24px', color: card.color }
                                                 })}
                                             </Box>
+                                            <Typography variant="subtitle1" component="h3" sx={{ color: '#0f172a', fontWeight: '700', fontSize: '15px', lineHeight: 1.3 }}>
+                                                {card.title}
+                                            </Typography>
                                         </Box>
                                         
                                         {/* الوصف بالأسفل */}
-                                        <Typography variant="body2" sx={{ color: '#64748b', fontSize: '12px', lineHeight: 1.5, mt: 'auto', textAlign: 'right' }}>
+                                        <Typography variant="body2" sx={{ color: '#64748b', fontSize: '12px', lineHeight: 1.5, mt: 'auto' }}>
                                             {card.description}
                                         </Typography>
                                     </CardContent>
@@ -307,7 +319,7 @@ const HomePage = ({ onLogout }) => {
                         </Grid>
                     ))}
                 </Grid>
-            </Stack>
+            </Box>
 
             {/* الشريط المتحرك السفلي */}
             <Box
@@ -316,12 +328,12 @@ const HomePage = ({ onLogout }) => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    backgroundColor: '#064e3b',
+                    backgroundColor: '#0f172a',
                     color: '#f8fafc',
                     textAlign: 'center',
                     py: 1.2,
                     zIndex: 1100,
-                    boxShadow: '0 -4px 20px rgba(0,0,0,0.1)',
+                    boxShadow: '0 -4px 20px rgba(0,0,0,0.15)',
                     borderTop: '2px solid #d97706'
                 }}
             >
