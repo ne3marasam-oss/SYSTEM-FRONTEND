@@ -130,9 +130,7 @@ const PaymentModalForm = ({ studentFee, onClose, onSuccess }) => {
                     required
                 >
                     <MenuItem value="CASH">نقداً</MenuItem>
-                    <MenuItem value="BANK_TRANSFER">تحويل بنكي</MenuItem>
-                    <MenuItem value="CHEQUE">شيك</MenuItem>
-                    <MenuItem value="OTHER">أخرى</MenuItem>
+                  
                 </Select>
             </FormControl>
 

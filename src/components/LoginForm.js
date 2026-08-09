@@ -12,14 +12,13 @@ export default function Login({ onLogin }) {
     setError('');
 
     try {
-      const response = await fetch(' https://system-backend-rwsk.onrender.com/api/auth/login', {
+      const response = await fetch('https://system-backend-rwsk.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
       });
 
       if (response.ok) {
-        // تحديث حالة تسجيل الدخول في App.js و localStorage بالاسم الصحيح isLoggedIn
         localStorage.setItem('isLoggedIn', 'true');
         if (onLogin) {
           onLogin();
@@ -35,36 +34,108 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', background: '#f4f6f9' }}>
-      <form onSubmit={handleLogin} style={{ background: '#fff', padding: '30px', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', width: '350px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333' }}>تسجيل الدخول للنظام</h2>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      background: 'linear-gradient(135deg, #064e3b 0%, #022c22 100%)', // خلفية متدرجة بالأخضر الداكن
+      fontFamily: 'Cairo, sans-serif',
+      direction: 'rtl'
+    }}>
+      <form onSubmit={handleLogin} style={{
+        background: '#ffffff',
+        padding: '40px 30px',
+        borderRadius: '16px',
+        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
+        width: '400px',
+        borderTop: '6px solid #10b981' // لمسة جمالية علوية بالأخضر الفاتح المتميز
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <h2 style={{ color: '#064e3b', fontWeight: 'bold', margin: '0 0 10px 0', fontSize: '24px' }}>تسجيل الدخول</h2>
+          <p style={{ color: '#6b7280', fontSize: '14px', margin: 0 }}>نظام إدارة المدرسة SAS</p>
+        </div>
         
-        {error && <div style={{ background: '#ffebee', color: '#c62828', padding: '10px', borderRadius: '4px', marginBottom: '15px', textAlign: 'center' }}>{error}</div>}
+        {error && (
+          <div style={{
+            background: '#fee2e2',
+            color: '#991b1b',
+            padding: '12px',
+            borderRadius: '8px',
+            marginBottom: '20px',
+            textAlign: 'center',
+            fontSize: '14px',
+            border: '1px solid #fecaca'
+          }}>
+            {error}
+          </div>
+        )}
         
-        <div style={{ marginBottom: '15px' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>اسم المستخدم</label>
+        <div style={{ marginBottom: '20px' }}>
+          <label style={{ display: 'block', marginBottom: '8px', color: '#374151', fontWeight: '600', fontSize: '14px' }}>اسم المستخدم</label>
           <input 
             type="text" 
             value={username} 
             onChange={(e) => setUsername(e.target.value)} 
             required
-            style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+            placeholder="أدخل اسم المستخدم"
+            style={{
+              width: '100%',
+              padding: '12px 15px',
+              borderRadius: '8px',
+              border: '1px solid #d1d5db',
+              outline: 'none',
+              fontSize: '14px',
+              transition: 'all 0.3s ease',
+              boxSizing: 'border-box'
+            }}
+            onFocus={(e) => e.target.style.borderColor = '#059669'}
+            onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
           />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>كلمة المرور</label>
+        <div style={{ marginBottom: '25px' }}>
+          <label style={{ display: 'block', marginBottom: '8px', color: '#374151', fontWeight: '600', fontSize: '14px' }}>كلمة المرور</label>
           <input 
             type="password" 
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
             required
-            style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+            placeholder="••••••••"
+            style={{
+              width: '100%',
+              padding: '12px 15px',
+              borderRadius: '8px',
+              border: '1px solid #d1d5db',
+              outline: 'none',
+              fontSize: '14px',
+              transition: 'all 0.3s ease',
+              boxSizing: 'border-box'
+            }}
+            onFocus={(e) => e.target.style.borderColor = '#059669'}
+            onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
           />
         </div>
 
-        <button type="submit" style={{ width: '100%', padding: '10px', background: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '16px' }}>
-          دخول
+        <button 
+          type="submit" 
+          style={{
+            width: '100%',
+            padding: '12px',
+            background: '#064e3b', // لون أخضر داكن فخم للأزرار
+            color: '#fff',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            transition: 'background 0.3s ease',
+            boxShadow: '0 4px 6px rgba(6, 78, 59, 0.2)'
+          }}
+          onMouseOver={(e) => e.target.style.background = '#047857'}
+          onMouseOut={(e) => e.target.style.background = '#064e3b'}
+        >
+          دخول للنظام
         </button>
       </form>
     </div>
