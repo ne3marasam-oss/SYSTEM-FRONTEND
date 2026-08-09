@@ -378,7 +378,7 @@ const HomePage = ({ onLogout }) => {
 
                     <Typography variant="h6" component="h1" sx={{ fontWeight: 'bold', color: '#1a237e' }}>
 
-                        نظام إدارة المدرسة SAS
+                        نظام إدارة المدرسة EvoSys
 
                     </Typography>
 
