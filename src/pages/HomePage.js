@@ -34,7 +34,7 @@ import logoIcon from '../assets/images/sas_logo_no.png';
 
 const HomePage = ({ onLogout }) => {
 
-    // تعريف بيانات بطاقات الميزات بتنسيق الألوان الفاخر المطابق للنموذج المطلوب
+    // تعريف بيانات بطاقات الميزات بتنسيق الألوان الفاخر
     const featureCards = [
         {
             title: 'إدارة المدرسة',
@@ -185,7 +185,7 @@ const HomePage = ({ onLogout }) => {
             fontFamily: 'Cairo, sans-serif', 
             direction: 'rtl' 
         }}>
-            {/* الشريط العلوي الفخم المماثل للنموذج */}
+            {/* الشريط العلوي باللون الكحلي المزرق */}
             <Box sx={{
                 width: '100%',
                 backgroundColor: '#0f172a',
@@ -243,17 +243,17 @@ const HomePage = ({ onLogout }) => {
 
             {/* محتوى الصفحة */}
             <Box sx={{ p: 3, pb: 10 }}>
-                {/* العنوان الرئيسي */}
-                <Box sx={{ textAlign: 'center', my: 3 }}>
-                    <Typography variant="h4" component="h2" sx={{ fontSize: '1.9rem', fontWeight: '800', color: '#1e293b', mb: 1, letterSpacing: '0.5px' }}>
+                {/* العنوان الرئيسي في منتصف الصفحة تماماً */}
+                <Box sx={{ textAlign: 'center', my: 4 }}>
+                    <Typography variant="h4" component="h2" sx={{ fontSize: '2rem', fontWeight: '800', color: '#0f172a', mb: 1, letterSpacing: '0.5px' }}>
                         لوحة التحكم الرئيسية
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#64748b', fontSize: '14px', fontWeight: '600' }}>
+                    <Typography variant="body2" sx={{ color: '#64748b', fontSize: '15px', fontWeight: '600' }}>
                         مرحباً بك في نظام إدارة المدرسة — اختر الوحدة التي تريد العمل عليها
                     </Typography>
                 </Box>
 
-                {/* شبكة البطاقات بتصميم المطابقة الدقيقة */}
+                {/* شبكة البطاقات بتنسيق الأيقونة في اليمين */}
                 <Grid container spacing={2.5} justifyContent="center" sx={{ px: 1 }}>
                     {featureCards.map((card, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
@@ -285,7 +285,7 @@ const HomePage = ({ onLogout }) => {
                                     }}
                                 >
                                     <CardContent sx={{ p: '0 !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                                        {/* الأيقونة في اليمين وبجانبها العنوان والتفاصيل مثل النموذج تماماً */}
+                                        {/* الأيقونة في اليمين وبجانبها العنوان */}
                                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
                                             <Box 
                                                 sx={{ 
@@ -321,7 +321,7 @@ const HomePage = ({ onLogout }) => {
                 </Grid>
             </Box>
 
-            {/* الشريط المتحرك السفلي */}
+            {/* الشريط السفلي باللون الكحلي المزرق */}
             <Box
                 sx={{
                     position: 'fixed',
