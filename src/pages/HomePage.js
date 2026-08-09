@@ -34,15 +34,15 @@ import logoIcon from '../assets/images/sas_logo_no.png';
 
 const HomePage = ({ onLogout }) => {
 
-    // تعريف بيانات بطاقات الميزات مع ألوان مربعات الأيقونات الفخمة والمنسجمة
+    // تعريف بيانات بطاقات الميزات مع تخصيص ألوان الأيقونات والخلفيات المربعة الفخمة
     const featureCards = [
         {
             title: 'إدارة المدرسة',
             description: 'تعديل وعرض بيانات المدرسة الأساسية.',
             icon: FaSchool,
             link: '/school',
-            color: '#0284c7', // أزرق ملكي
-            bg: '#e0f2fe'
+            color: '#2563eb', // أزرق ملكي
+            bg: '#eff6ff'
         },
         {
             title: 'الطلاب',
@@ -50,7 +50,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaUserGraduate,
             link: '/students',
             color: '#059669', // أخضر زمردي
-            bg: '#d1fae5'
+            bg: '#ecfdf5'
         },
         {
             title: 'السنوات الأكاديمية',
@@ -58,7 +58,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaCalendarAlt,
             link: '/academic-years',
             color: '#d97706', // ذهبي
-            bg: '#fef3c7'
+            bg: '#fffbeb'
         },
         {
             title: 'إدارة الموظفين',
@@ -66,7 +66,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaUsers,
             link: '/employees',
             color: '#7c3aed', // بنفسجي فاخر
-            bg: '#ede9fe'
+            bg: '#f5f3ff'
         },
         {
             title: 'إدارة الرواتب',
@@ -74,7 +74,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaHandHoldingUsd,
             link: '/payroll',
             color: '#db2777', // وردي دافئ
-            bg: '#fce7f3'
+            bg: '#fdf2f8'
         },
         {
             title: 'سلف الموظفين',
@@ -82,7 +82,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaHandHoldingUsd,
             link: '/salary-advances',
             color: '#ea580c', // برتقالي محروق
-            bg: '#ffedd5'
+            bg: '#fff7ed'
         },
         {
             title: 'تحويل الأموال',
@@ -90,7 +90,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaExchangeAlt,
             link: '/money-transfer',
             color: '#0d9488', // تركواز
-            bg: '#ccfbf1'
+            bg: '#f0fdfa'
         },
         {
             title: 'إدارة المصروفات والفواتير',
@@ -98,7 +98,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaMoneyBillWave,
             link: '/expenses',
             color: '#e11d48', // أحمر داكن أنيق
-            bg: '#ffe4e6'
+            bg: '#fff1f2'
         },
         {
             title: 'الدخل والإيرادات',
@@ -106,7 +106,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaMoneyCheckAlt,
             link: '/income-revenues',
             color: '#16a34a', // أخضر عشبي
-            bg: '#dcfce7'
+            bg: '#f0fdf4'
         },
         {
             title: 'تقارير الرسوم',
@@ -114,7 +114,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaChartBar,
             link: '/student-fees-reports',
             color: '#4f46e5', // أزرق نيلي
-            bg: '#e0e7ff'
+            bg: '#eef2ff'
         },
         {
             title: 'إدارة أنواع الرسوم',
@@ -129,8 +129,8 @@ const HomePage = ({ onLogout }) => {
             description: 'عرض جميع رسوم الطلاب في جدول تفاعلي.',
             icon: FaFileInvoiceDollar,
             link: '/student-fees-table',
-            color: '#0284c7',
-            bg: '#e0f2fe'
+            color: '#2563eb',
+            bg: '#eff6ff'
         },
         {
             title: 'دفتر الأستاذ العام',
@@ -138,7 +138,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaBookOpen,
             link: '/general-ledger',
             color: '#9333ea',
-            bg: '#f3e8ff'
+            bg: '#faf5ff'
         },
         {
             title: 'ميزان المراجعة',
@@ -146,7 +146,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaBalanceScale,
             link: '/trial-balance',
             color: '#059669',
-            bg: '#d1fae5'
+            bg: '#ecfdf5'
         },
         {
             title: 'شجرة الحسابات',
@@ -154,7 +154,7 @@ const HomePage = ({ onLogout }) => {
             icon: FaBalanceScale,
             link: '/chart-of-accounts',
             color: '#d97706',
-            bg: '#fef3c7'
+            bg: '#fffbeb'
         },
         {
             title: 'القيود المحاسبية',
@@ -162,15 +162,15 @@ const HomePage = ({ onLogout }) => {
             icon: FaBookOpen,
             link: '/journal-entries',
             color: '#7c3aed',
-            bg: '#ede9fe'
+            bg: '#f5f3ff'
         },
         {
             title: 'النسخ الاحتياطي والاستعادة',
             description: 'إنشاء واستعادة النسخ الاحتياطية لقاعدة البيانات.',
             icon: FaDatabase,
             link: '/backup-restore',
-            color: '#0284c7',
-            bg: '#e0f2fe'
+            color: '#2563eb',
+            bg: '#eff6ff'
         },
     ];
 
@@ -258,10 +258,10 @@ const HomePage = ({ onLogout }) => {
                                         flexDirection: 'column',
                                         justifyContent: 'space-between',
                                         p: 2.5,
-                                        borderRadius: '16px',
+                                        borderRadius: '18px',
                                         border: '1px solid #e2e8f0',
-                                        borderTop: '4px solid #d97706', // حافة ذهبية فخمة بالأعلى
-                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                                        borderTop: '5px solid #d97706', // حافة ذهبية ملكية فاخرة بالأعلى
+                                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
                                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                         '&:hover': {
                                             transform: 'translateY(-6px)',
@@ -273,32 +273,32 @@ const HomePage = ({ onLogout }) => {
                                     }}
                                 >
                                     <CardContent sx={{ p: '0 !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                                        {/* صف الأيقونة والعنوان بجانب بعضهما بنفس تصميم الصورة */}
+                                        {/* صف الأيقونة الملونة الكبيرة في الأعلى بجانب العنوان بنفس تصميم النموذج الفخم */}
                                         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: 'space-between' }}>
-                                            <Typography variant="subtitle1" component="h3" sx={{ color: '#0f172a', fontWeight: '700', fontSize: '15px', lineHeight: 1.4 }}>
+                                            <Typography variant="subtitle1" component="h3" sx={{ color: '#0f172a', fontWeight: '700', fontSize: '15px', lineHeight: 1.4, textAlign: 'right' }}>
                                                 {card.title}
                                             </Typography>
                                             <Box 
                                                 sx={{ 
-                                                    width: '46px', 
-                                                    height: '46px', 
-                                                    borderRadius: '12px', 
+                                                    width: '52px', 
+                                                    height: '52px', 
+                                                    borderRadius: '14px', 
                                                     background: card.bg, 
                                                     display: 'flex', 
                                                     alignItems: 'center', 
                                                     justifyContent: 'center',
                                                     flexShrink: 0,
-                                                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)'
+                                                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
                                                 }}
                                             >
                                                 {React.createElement(card.icon, {
-                                                    style: { fontSize: '22px', color: card.color }
+                                                    style: { fontSize: '26px', color: card.color }
                                                 })}
                                             </Box>
                                         </Box>
                                         
                                         {/* الوصف بالأسفل */}
-                                        <Typography variant="body2" sx={{ color: '#64748b', fontSize: '12px', lineHeight: 1.5, mt: 'auto' }}>
+                                        <Typography variant="body2" sx={{ color: '#64748b', fontSize: '12px', lineHeight: 1.5, mt: 'auto', textAlign: 'right' }}>
                                             {card.description}
                                         </Typography>
                                     </CardContent>
