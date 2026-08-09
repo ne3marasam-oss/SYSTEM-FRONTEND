@@ -244,11 +244,12 @@ const HomePage = ({ onLogout }) => {
             {/* محتوى الصفحة */}
             <Box sx={{ p: 3, pb: 10 }}>
                 {/* العنوان الرئيسي في منتصف الصفحة تماماً */}
-                <Box sx={{ textAlign: 'center', my: 4 }}>
-                    <Typography variant="h4" component="h2" sx={{ fontSize: '2rem', fontWeight: '800', color: '#0f172a', mb: 1, letterSpacing: '0.5px' }}>
+               {/* العنوان الرئيسي في منتصف الصفحة تماماً */}
+                <Box sx={{ textAlign: 'center', my: 4, width: '100%' }}>
+                    <Typography variant="h4" component="h2" align="center" sx={{ fontSize: '2rem', fontWeight: '800', color: '#0f172a', mb: 1, letterSpacing: '0.5px' }}>
                         لوحة التحكم الرئيسية
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#64748b', fontSize: '15px', fontWeight: '600' }}>
+                    <Typography variant="body2" align="center" sx={{ color: '#64748b', fontSize: '15px', fontWeight: '600' }}>
                         مرحباً بك في نظام إدارة المدرسة — اختر الوحدة التي تريد العمل عليها
                     </Typography>
                 </Box>
