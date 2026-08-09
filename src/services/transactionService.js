@@ -1,7 +1,7 @@
 // File: src/services/transactionService.js
 import axios from 'axios';
 
-const API_URL = ' https://system-backend-rwsk.onrender.com/api/transactions';
+const API_URL = 'https://system-backend-rwsk.onrender.com/api/transactions';
 
 export const getAllTransactions = () => {
     return axios.get(API_URL);

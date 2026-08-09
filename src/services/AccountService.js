@@ -1,7 +1,7 @@
 // src/services/AccountService.js
 import axios from 'axios';
 
-const API_URL = ' https://system-backend-rwsk.onrender.com/api/accounts'; // تأكد من هذا المسار
+const API_URL = 'https://system-backend-rwsk.onrender.com/api/accounts'; // تأكد من هذا المسار
 
 class AccountService {
     getAllAccounts() {

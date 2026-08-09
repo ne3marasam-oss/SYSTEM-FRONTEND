@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // عنوان الـ API الخاص بـ Spring Boot
 // تأكد من أن هذا يتطابق مع المنفذ الذي يعمل عليه تطبيق Spring Boot (عادةً 8080)
-const API_URL = ' https://system-backend-rwsk.onrender.com/api/students';
+const API_URL = 'https://system-backend-rwsk.onrender.com/api/students';
 
 class StudentService {
     // جلب جميع الطلاب

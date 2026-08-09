@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = ' https://system-backend-rwsk.onrender.com/api/expenses';
+const API_URL = 'https://system-backend-rwsk.onrender.com/api/expenses';
 
 const expenseService = {
     // جلب جميع المصروفات

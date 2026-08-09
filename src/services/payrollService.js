@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // التأكد من أن المسار يبدأ بـ /api ليطابق الـ RequestMapping في الجافا
-const API_URL = ' https://system-backend-h8kw.onrender.com/api/payroll';
+const API_URL = 'https://system-backend-h8kw.onrender.com/api/payroll';
 
 const payrollService = {
 
