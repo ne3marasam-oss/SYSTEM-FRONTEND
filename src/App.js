@@ -134,6 +134,10 @@ function App() {
                             path="/home"
                             element={isLoggedIn ? <HomePage onLogout={handleLogout} /> : <Navigate to="/login" replace />}
                         />
+                        <Route
+    path="/trial-balance"
+    element={isLoggedIn ? <TrialBalance /> : <Navigate to="/login" replace />}
+/>
                         {/* 2. **تأكد من المسار الصحيح** */}
                         <Route
                                 path="/salary-advances"
