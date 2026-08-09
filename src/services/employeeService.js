@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // الرابط الأساسي لواجهة API
-const API_URL = ' https://system-backend-h8kw.onrender.com/api/employees';
+const API_URL = ' https://system-backend-rwsk.onrender.com/api/employees';
 
 const employeeService = {
 
@@ -10,7 +10,7 @@ const employeeService = {
     },
 
     getEmployeeById: (id) => {
-        return axios.get(` https://system-backend-h8kw.onrender.com/api/employees/${id}`);
+        return axios.get(` https://system-backend-rwsk.onrender.com/api/employees/${id}`);
     },
 
     saveEmployee: (employee) => { // قمت بتسميتها save لتناسب كود الـ Controller لديك

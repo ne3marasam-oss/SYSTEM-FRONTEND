@@ -1,7 +1,7 @@
 // src/services/salaryAdvanceService.js
 import axios from 'axios';
 
-const API_URL = ' https://system-backend-h8kw.onrender.com/api/salary-advances';
+const API_URL = ' https://system-backend-rwsk.onrender.com/api/salary-advances';
 
 const salaryAdvanceService = {
     // دالة لجلب كل السلف (قد تحتاجها في مكان آخر)
