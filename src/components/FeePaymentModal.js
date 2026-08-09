@@ -240,7 +240,6 @@ const FeePaymentModal = ({ open, onClose, studentFee, onPaymentAdded }) => {
                                     <InputLabel>طريقة الدفع</InputLabel>
                                     <Select value={method} label="طريقة الدفع" onChange={(e) => setMethod(e.target.value)}>
                                         <MenuItem value="Cash">نقدي (الصندوق)</MenuItem>
-                                        <MenuItem value="BankTransfer">تحويل بنكي</MenuItem>
                                     </Select>
                                 </FormControl>
                             </>

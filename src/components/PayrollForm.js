@@ -506,9 +506,7 @@ const PayrollForm = () => {
                         onChange={handleChange}
                         required
                     >
-                        <option value="Bank Transfer">تحويل بنكي</option>
                         <option value="Cash">نقداً</option>
-                        <option value="Cheque">شيك</option>
                     </select>
                 </div>
 
