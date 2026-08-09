@@ -37,7 +37,7 @@ const StudentSearchPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:8080/api/students', {
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/students', {
                 params: {
                     query,
                     grade: gradeFilter,

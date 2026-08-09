@@ -33,8 +33,8 @@ const ExpensesPage = () => {
         setError(null);
         try {
             const [expRes, yearRes] = await Promise.all([
-                axios.get('http://localhost:8080/api/expenses'),
-                axios.get('http://localhost:8080/api/academic-years')
+                axios.get('https://system-backend-rwsk.onrender.com/api/expenses'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/academic-years')
             ]);
             
             const expData = Array.isArray(expRes.data) 
@@ -63,7 +63,7 @@ const ExpensesPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:8080/api/expenses/search', { 
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/expenses/search', { 
                 params: {
                     startDate: filters.startDate || null,
                     endDate: filters.endDate || null
@@ -87,7 +87,7 @@ const ExpensesPage = () => {
 
     const handleCancel = async (id) => {
         try {
-            await axios.put(`http://localhost:8080/api/expenses/${id}/cancel`);
+            await axios.put(`https://system-backend-rwsk.onrender.com/api/expenses/${id}/cancel`);
             // تحديث الحالة محلياً لتصبح ملغاة فوراً
             setCancelledMap(prev => ({ ...prev, [id]: true }));
         } catch (err) {
@@ -98,7 +98,7 @@ const ExpensesPage = () => {
 
     const handleReimburse = async (id) => {
         try {
-            await axios.put(`http://localhost:8080/api/expenses/${id}/reimburse`);
+            await axios.put(`https://system-backend-rwsk.onrender.com/api/expenses/${id}/reimburse`);
             // تحديث الحالة محلياً لتصبح غير ملغاة (نشطة) فوراً
             setCancelledMap(prev => ({ ...prev, [id]: false }));
         } catch (err) {

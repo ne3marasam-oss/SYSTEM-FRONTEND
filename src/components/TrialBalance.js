@@ -30,7 +30,7 @@ const TrialBalancePage = () => {
         setError(null);
         setClosingStatusMessage(null); 
         try {
-            const academicYearsRes = await axios.get('http://localhost:8080/api/academic-years');
+            const academicYearsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years');
             const years = Array.isArray(academicYearsRes.data) ? academicYearsRes.data : [];
             setAcademicYears(years);
 
@@ -63,7 +63,7 @@ const TrialBalancePage = () => {
                 endDate: filters.endDate || undefined
             };
 
-            const trialBalanceRes = await axios.get('http://localhost:8080/api/trial-balance-report', { params });
+            const trialBalanceRes = await axios.get('https://system-backend-rwsk.onrender.com/api/trial-balance-report', { params });
             setTrialBalanceData(Array.isArray(trialBalanceRes.data) ? trialBalanceRes.data : []);
 
         } catch (err) {
@@ -104,7 +104,7 @@ const TrialBalancePage = () => {
 
         try {
             // المسار الجديد المطابق لـ YearEndClosingController
-            const url = `http://localhost:8080/api/closing-entries/close-year/${filters.academicYearId}`;
+            const url = `https://system-backend-rwsk.onrender.com/api/closing-entries/close-year/${filters.academicYearId}`;
             
             // إرسال كائن DTO بدلاً من ID فقط
             const closingDto = {

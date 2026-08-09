@@ -30,8 +30,8 @@ const PaymentsPage = () => {
 
             // تحديد المسار بناءً على وجود معايير بحث
             const url = Object.keys(validParams).length > 0
-                ? 'http://localhost:8080/api/payments/search'
-                : 'http://localhost:8080/api/payments';
+                ? 'https://system-backend-rwsk.onrender.com/api/payments/search'
+                : 'https://system-backend-rwsk.onrender.com/api/payments';
 
             const response = await axios.get(url, {
                 params: validParams,
@@ -65,7 +65,7 @@ const PaymentsPage = () => {
     const handleDeletePayment = async (id) => {
         if (window.confirm('هل أنت متأكد من حذف هذه الدفعة؟')) {
             try {
-                await axios.delete(`http://localhost:8080/api/payments/${id}`);
+                await axios.delete(`https://system-backend-rwsk.onrender.com/api/payments/${id}`);
                 // إعادة جلب القائمة بعد الحذف
                 fetchPayments();
             } catch (err) {

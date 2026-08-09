@@ -5,7 +5,7 @@ const PaymentReceipt = React.forwardRef(({ paymentData, studentFee }, ref) => {
     const [schoolInfo, setSchoolInfo] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/schools')
+        fetch('https://system-backend-rwsk.onrender.com/api/schools')
             .then(res => res.json())
             .then(data => {
                 if (data) {
@@ -38,7 +38,7 @@ const PaymentReceipt = React.forwardRef(({ paymentData, studentFee }, ref) => {
     const logoFileName = schoolInfo?.logo || schoolInfo?.schoolLogo || 'logo.jpg';
     const schoolLogoUrl = logoFileName.startsWith('http') 
         ? logoFileName 
-        : `http://localhost:8080/uploads/${logoFileName}`;
+        : `https://system-backend-rwsk.onrender.com/uploads/${logoFileName}`;
 
     const schoolName = schoolInfo?.name || schoolInfo?.schoolName || "مدرسة التميز";
 
@@ -73,8 +73,8 @@ const PaymentReceipt = React.forwardRef(({ paymentData, studentFee }, ref) => {
                         src={schoolLogoUrl} 
                         alt="شعار المدرسة" 
                         onError={(e) => {
-                            if (e.target.src !== `http://localhost:8080/${logoFileName}`) {
-                                e.target.src = `http://localhost:8080/${logoFileName}`;
+                            if (e.target.src !== `https://system-backend-rwsk.onrender.com/${logoFileName}`) {
+                                e.target.src = `https://system-backend-rwsk.onrender.com/${logoFileName}`;
                             } else {
                                 e.target.style.display = 'none';
                             }

@@ -33,7 +33,7 @@ const ExpensesReportsPage = () => {
             const formattedStartDate = dayjs(startDate).format('YYYY-MM-DD');
             const formattedEndDate = dayjs(endDate).format('YYYY-MM-DD');
 
-            const response = await axios.get('http://localhost:8080/api/expenses/report', {
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/expenses/report', {
                 params: {
                     startDate: formattedStartDate,
                     endDate: formattedEndDate,

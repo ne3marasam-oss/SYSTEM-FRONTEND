@@ -31,7 +31,7 @@ const StudentFeesReportsPage = () => {
         setLogoError(false);
 
         try {
-            let url = 'http://localhost:8080/api/student-fees';
+            let url = 'https://system-backend-rwsk.onrender.com/api/student-fees';
             let params = {};
 
             if (query.trim() !== '') {
@@ -41,7 +41,7 @@ const StudentFeesReportsPage = () => {
 
             const [feesResponse, schoolResponse] = await Promise.all([
                 axios.get(url, { params }),
-                axios.get('http://localhost:8080/api/schools').catch(() => ({ data: [] }))
+                axios.get('https://system-backend-rwsk.onrender.com/api/schools').catch(() => ({ data: [] }))
             ]);
 
             setStudentFees(feesResponse.data);
@@ -60,7 +60,7 @@ const StudentFeesReportsPage = () => {
                             logoUrl = rawLogo;
                         } else {
                             const formattedPath = rawLogo.startsWith('/') ? rawLogo : `/${rawLogo}`;
-                            logoUrl = `http://localhost:8080${formattedPath}`;
+                            logoUrl = `https://system-backend-rwsk.onrender.com${formattedPath}`;
                         }
                     }
 

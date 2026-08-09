@@ -18,7 +18,7 @@ const PayrollList = () => {
     
     const [schoolInfo, setSchoolInfo] = useState({
         name: 'التميز',
-        logo: 'http://localhost:8080/uploads/logo.jpg'
+        logo: 'https://system-backend-rwsk.onrender.com/uploads/logo.jpg'
     });
 
     const getMonthName = (monthNumber) => {
@@ -37,7 +37,7 @@ const PayrollList = () => {
             setLoading(true);
             try {
                 try {
-const schoolRes = await fetch('http://localhost:8080/api/schools');
+const schoolRes = await fetch('https://system-backend-rwsk.onrender.com/api/schools');
 if (schoolRes.ok) {
     const schoolData = await schoolRes.json();
     console.log("School Data from DB:", schoolData);
@@ -51,13 +51,13 @@ if (schoolRes.ok) {
         const logoKey = Object.keys(activeSchool).find(key => key.toLowerCase().includes('logo'));
         const rawLogo = logoKey ? activeSchool[logoKey] : null;
 
-        let finalLogo = 'http://localhost:8080/uploads/logo.jpg';
+        let finalLogo = 'https://system-backend-rwsk.onrender.com/uploads/logo.jpg';
         if (rawLogo) {
             if (rawLogo.startsWith('http')) {
                 finalLogo = rawLogo;
             } else {
                 const cleanLogoName = rawLogo.replace(/^\/uploads\//, '').replace(/^uploads\//, '');
-                finalLogo = `http://localhost:8080/uploads/${cleanLogoName}`;
+                finalLogo = `https://system-backend-rwsk.onrender.com/uploads/${cleanLogoName}`;
             }
         }
 

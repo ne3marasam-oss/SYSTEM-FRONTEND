@@ -51,7 +51,7 @@ const App = () => {
         setMessage('');
         setError('');
         try {
-            const url = new URL('http://localhost:8080/api/backup/create');
+            const url = new URL('https://system-backend-rwsk.onrender.com/api/backup/create');
             if (folderName) {
                 url.searchParams.append('folderName', folderName);
             }
@@ -84,7 +84,7 @@ const App = () => {
         const formData = new FormData();
         formData.append('file', selectedFile);
         try {
-            const response = await fetch('http://localhost:8080/api/backup/restore', {
+            const response = await fetch('https://system-backend-rwsk.onrender.com/api/backup/restore', {
                 method: 'POST',
                 body: formData,
             });
@@ -104,7 +104,7 @@ const App = () => {
     const testApiConnection = async () => {
         console.log("------------------------------------------");
         console.log("بدء اختبار اتصال API...");
-        const testUrl = 'http://localhost:8080/api/backup/create';
+        const testUrl = 'https://system-backend-rwsk.onrender.com/api/backup/create';
         try {
             const response = await fetch(testUrl, { method: 'POST' });
             console.log("تم إرسال طلب POST إلى:", testUrl);
@@ -137,7 +137,7 @@ const App = () => {
             setMessage('');
             setError('');
             try {
-                const response = await fetch('http://localhost:8080/api/clear-data', {
+                const response = await fetch('https://system-backend-rwsk.onrender.com/api/clear-data', {
                     method: 'POST',
                 });
                 if (!response.ok) {

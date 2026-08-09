@@ -90,14 +90,14 @@ const IncomeRevenuesPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const paymentsRes = await axios.get('http://localhost:8080/api/payments');
+            const paymentsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/payments');
             setPayments(Array.isArray(paymentsRes.data) ? paymentsRes.data : []);
 
             // جلب سندات القبض العامة والتشغيلية من الخادم
-            const vouchersRes = await axios.get('http://localhost:8080/api/revenues/vouchers');
+            const vouchersRes = await axios.get('https://system-backend-rwsk.onrender.com/api/revenues/vouchers');
             setVouchers(Array.isArray(vouchersRes.data) ? vouchersRes.data : []);
 
-            const academicYearsRes = await axios.get('http://localhost:8080/api/academic-years');
+            const academicYearsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years');
             setAcademicYears(Array.isArray(academicYearsRes.data) ? academicYearsRes.data : []);
 
         } catch (err) {
@@ -132,7 +132,7 @@ const IncomeRevenuesPage = () => {
         setModalError('');
         setLoadingAccounts(true);
         try {
-            const response = await axios.get('http://localhost:8080/api/accounts/revenue-subaccounts');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts/revenue-subaccounts');
             setAccounts(response.data);
         } catch (err) {
             console.error(err);
@@ -160,7 +160,7 @@ const IncomeRevenuesPage = () => {
         setSuccessMsg('');
 
         try {
-            await axios.post('http://localhost:8080/api/revenues/vouchers', voucherData);
+            await axios.post('https://system-backend-rwsk.onrender.com/api/revenues/vouchers', voucherData);
             setSuccessMsg('تم حفظ وترحيل سند القبض العام بنجاح!');
             setVoucherData({
                 voucherNumber: `REC-${Math.floor(100000 + Math.random() * 900000)}`,

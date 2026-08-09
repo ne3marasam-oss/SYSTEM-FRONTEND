@@ -46,7 +46,7 @@ const EditExpenseModal = ({ open, onClose, onExpenseUpdated, expenseData }) => {
                 expenseDate: `${editedData.expenseDate}T00:00:00`
             };
 
-            await axios.put(`http://localhost:8080/api/expenses/${editedData.id}`, formattedExpenseData);
+            await axios.put(`https://system-backend-rwsk.onrender.com/api/expenses/${editedData.id}`, formattedExpenseData);
 
             onExpenseUpdated();
             handleClose();

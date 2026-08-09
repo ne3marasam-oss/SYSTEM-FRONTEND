@@ -59,9 +59,9 @@ const AddStudentFeeModal = ({ open, onClose, onSuccess }) => {
         if (open) {
             setLoading(true);
             Promise.all([
-                axios.get('http://localhost:8080/api/students'),
-                axios.get('http://localhost:8080/api/fee-types'),
-                axios.get('http://localhost:8080/api/academic-years')
+                axios.get('https://system-backend-rwsk.onrender.com/api/students'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/fee-types'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/academic-years')
             ]).then(([stdRes, feeRes, yearRes]) => {
                 setStudents(stdRes.data);
                 setFeeTypes(feeRes.data);
@@ -133,7 +133,7 @@ const AddStudentFeeModal = ({ open, onClose, onSuccess }) => {
         };
 
         try {
-            await axios.post('http://localhost:8080/api/student-fees', payload);
+            await axios.post('https://system-backend-rwsk.onrender.com/api/student-fees', payload);
             onSuccess();
             onClose();
         } catch (err) {

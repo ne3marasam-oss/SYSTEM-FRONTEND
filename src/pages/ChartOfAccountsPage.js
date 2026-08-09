@@ -185,7 +185,7 @@ const ChartOfAccountsPage = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('http://localhost:8080/api/accounts');
+      const response = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts');
       if (response.data && response.data.length > 0) {
         // تحويل القائمة المسطحة القادمة من الباك إند إلى شجرة متداخلة ومنظمة
         const hierarchicalTree = buildTreeFromDatabase(response.data);
@@ -237,7 +237,7 @@ const ChartOfAccountsPage = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:8080/api/accounts/${accId}`);
+      await axios.delete(`https://system-backend-rwsk.onrender.com/api/accounts/${accId}`);
       alert('تم حذف الحساب بنجاح! ✅');
       fetchAccounts();
     } catch (err) {
@@ -307,10 +307,10 @@ const ChartOfAccountsPage = () => {
 
     try {
       if (isEditMode && selectedAccountId) {
-        await axios.put(`http://localhost:8080/api/accounts/${selectedAccountId}`, payload);
+        await axios.put(`https://system-backend-rwsk.onrender.com/api/accounts/${selectedAccountId}`, payload);
         alert('تم تعديل الحساب بنجاح! ✏️');
       } else {
-        await axios.post('http://localhost:8080/api/accounts', payload);
+        await axios.post('https://system-backend-rwsk.onrender.com/api/accounts', payload);
         alert('تم حفظ الحساب بنجاح! ✅');
       }
 

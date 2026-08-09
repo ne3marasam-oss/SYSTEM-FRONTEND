@@ -24,7 +24,7 @@ const MoneyTransferPage = () => {
 
     const fetchAccounts = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/accounts');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts');
             setAccounts(response.data);
         } catch (err) {
             setStatus({ type: 'error', msg: 'فشل في جلب الحسابات' });
@@ -34,7 +34,7 @@ const MoneyTransferPage = () => {
     // دالة لجلب السنة الأكاديمية الحالية (تأكد من وجود هذا المسار في السيرفر لديك)
     const fetchActiveAcademicYear = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/academic-years/active');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years/active');
             if (response.data) {
                 setTransferData(prev => ({ ...prev, academicYearId: response.data.id }));
             }
@@ -60,7 +60,7 @@ const MoneyTransferPage = () => {
 
         try {
             // إرسال البيانات بما فيها academicYearId الجديد
-            const response = await axios.post('http://localhost:8080/api/transfers', transferData);
+            const response = await axios.post('https://system-backend-rwsk.onrender.com/api/transfers', transferData);
             setStatus({ type: 'success', msg: response.data });
             
             // إعادة تعيين النموذج مع الحفاظ على السنة الأكاديمية

@@ -17,7 +17,7 @@ const ClosingEntriesPage = () => {
         // Load academic years on component mount
         const fetchAcademicYears = async () => {
             try {
-                const academicYearsRes = await axios.get('http://localhost:8080/api/academic-years');
+                const academicYearsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years');
                 setAcademicYears(Array.isArray(academicYearsRes.data) ? academicYearsRes.data : []);
             } catch (err) {
                 console.error('Failed to load academic years:', err);
@@ -28,7 +28,7 @@ const ClosingEntriesPage = () => {
         // Load initial closing status
         const fetchClosingStatus = async () => {
             try {
-                const statusRes = await axios.get('http://localhost:8080/api/closing-entries/status');
+                const statusRes = await axios.get('https://system-backend-rwsk.onrender.com/api/closing-entries/status');
                 setClosingStatusData(Array.isArray(statusRes.data) ? statusRes.data : []);
             } catch (err) {
                 console.error('Failed to load closing status:', err);
@@ -81,13 +81,13 @@ const ClosingEntriesPage = () => {
         setError(null);
 
         try {
-            const response = await axios.post('http://localhost:8080/api/closing-entries/process', {
+            const response = await axios.post('https://system-backend-rwsk.onrender.com/api/closing-entries/process', {
                 academicYearId: selectedAcademicYearId,
                 closingDate: closingDate
             });
             setMessage(response.data.message || 'تمت عملية الإقفال بنجاح!');
             // Re-fetch closing status to update the table
-            const statusRes = await axios.get('http://localhost:8080/api/closing-entries/status');
+            const statusRes = await axios.get('https://system-backend-rwsk.onrender.com/api/closing-entries/status');
             setClosingStatusData(Array.isArray(statusRes.data) ? statusRes.data : []);
 
         } catch (err) {

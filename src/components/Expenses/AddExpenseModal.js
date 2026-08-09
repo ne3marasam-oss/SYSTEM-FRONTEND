@@ -36,9 +36,9 @@ const AddExpenseModal = ({ open, onClose, onExpenseAdded }) => {
     const fetchInitialData = async () => {
         try {
             const [yearsRes, accountsRes, cashAccountsRes] = await Promise.all([
-                axios.get('http://localhost:8080/api/academic-years'),
-                axios.get('http://localhost:8080/api/accounts'),
-                axios.get('http://localhost:8080/api/accounts/cash-accounts')
+                axios.get('https://system-backend-rwsk.onrender.com/api/academic-years'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/accounts'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/accounts/cash-accounts')
             ]);
             
             setAcademicYears(yearsRes.data || []);
@@ -133,7 +133,7 @@ const AddExpenseModal = ({ open, onClose, onExpenseAdded }) => {
                 vendorName: expenseData.vendorName || null
             };
 
-            const response = await axios.post('http://localhost:8080/api/expenses', payload);
+            const response = await axios.post('https://system-backend-rwsk.onrender.com/api/expenses', payload);
 
             if (response.status >= 200 && response.status < 300) {
                 onClose(); 

@@ -34,11 +34,11 @@ const StudentDetailPage = () => {
             setError(null);
             try {
                 // جلب بيانات الطالب
-                const studentResponse = await axios.get(`http://localhost:8080/api/students/${id}`);
+                const studentResponse = await axios.get(`https://system-backend-rwsk.onrender.com/api/students/${id}`);
                 setStudent(studentResponse.data);
 
                 // جلب بيانات الرسوم للطالب
-                const feesResponse = await axios.get(`http://localhost:8080/api/student-fees/student/${id}`);
+                const feesResponse = await axios.get(`https://system-backend-rwsk.onrender.com/api/student-fees/student/${id}`);
                 setFees(feesResponse.data);
 
             } catch (err) {

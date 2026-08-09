@@ -21,19 +21,19 @@ const ExpenseTable = ({ expenses, onEdit, onDelete, onCancel, onReimburse }) => 
         const fetchData = async () => {
             try {
                 // جلب الحسابات
-                const accRes = await axios.get('http://localhost:8080/api/accounts/cash-accounts');
+                const accRes = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts/cash-accounts');
                 const rawCashList = accRes.data || [];
                 setPaymentAccounts(rawCashList.map(acc => ({ ...acc, accountName: acc.accountName || acc.name })));
                 if (rawCashList.length > 0) setSelectedAccountId(rawCashList[0].id);
 
                 // جلب بيانات المدرسة
-                const schoolRes = await axios.get('http://localhost:8080/api/school-info');
+                const schoolRes = await axios.get('https://system-backend-rwsk.onrender.com/api/school-info');
                 if (schoolRes.data) {
                     const data = schoolRes.data;
                     const name = data.schoolName || data.name || data.arabicName || 'اسم المدرسة';
                     let logo = data.logoUrl || data.logo || data.schoolLogo || '';
                     if (logo && !logo.startsWith('http')) {
-                        logo = `http://localhost:8080${logo.startsWith('/') ? '' : '/'}${logo}`;
+                        logo = `https://system-backend-rwsk.onrender.com${logo.startsWith('/') ? '' : '/'}${logo}`;
                     }
                     setSchoolInfo({ name, logo });
                 }
@@ -63,7 +63,7 @@ const ExpenseTable = ({ expenses, onEdit, onDelete, onCancel, onReimburse }) => 
 
         // جلب بيانات المدرسة مباشرة عند الضغط على الطباعة لضمان عدم ظهور القيم الافتراضية
         try {
-            const schoolRes = await axios.get('http://localhost:8080/api/schools');
+            const schoolRes = await axios.get('https://system-backend-rwsk.onrender.com/api/schools');
             if (schoolRes.data) {
                 const schoolData = Array.isArray(schoolRes.data) ? schoolRes.data[0] : schoolRes.data;
                 if (schoolData) {
@@ -72,7 +72,7 @@ const ExpenseTable = ({ expenses, onEdit, onDelete, onCancel, onReimburse }) => 
                     if (logoPath) {
                         currentLogo = logoPath.startsWith('http') || logoPath.startsWith('data:') 
                             ? logoPath 
-                            : `http://localhost:8080${logoPath.startsWith('/') ? '' : '/'}${logoPath}`;
+                            : `https://system-backend-rwsk.onrender.com${logoPath.startsWith('/') ? '' : '/'}${logoPath}`;
                     }
                 }
             }

@@ -44,10 +44,10 @@ const StudentFeesPage = () => {
         try {
             // جلب البيانات الأساسية (الطلاب، السنوات، الأنواع)
             const [studentsRes, feeTypesRes, academicYearsRes, feesRes] = await Promise.all([
-                axios.get('http://localhost:8080/api/students'),
-                axios.get('http://localhost:8080/api/fee-types'),
-                axios.get('http://localhost:8080/api/academic-years'),
-                axios.get('http://localhost:8080/api/student-fees')
+                axios.get('https://system-backend-rwsk.onrender.com/api/students'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/fee-types'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/academic-years'),
+                axios.get('https://system-backend-rwsk.onrender.com/api/student-fees')
             ]);
 
             setStudents(Array.isArray(studentsRes.data) ? studentsRes.data : []);
@@ -73,7 +73,7 @@ const StudentFeesPage = () => {
         if (startDate) params.startDate = startDate; // startDate ستكون YYYY-MM-DD تلقائياً
         if (endDate) params.endDate = endDate;
 
-        const response = await axios.get('http://localhost:8080/api/student-fees/search', { params });
+        const response = await axios.get('https://system-backend-rwsk.onrender.com/api/student-fees/search', { params });
         setStudentFees(response.data);
     } catch (err) {
         console.error('Search failed:', err);
@@ -92,7 +92,7 @@ const StudentFeesPage = () => {
     const handleDeleteStudentFee = async (id) => {
         if (window.confirm('هل أنت متأكد أنك تريد حذف رسوم الطالب هذه؟')) {
             try {
-                await axios.delete(`http://localhost:8080/api/student-fees/${id}`);
+                await axios.delete(`https://system-backend-rwsk.onrender.com/api/student-fees/${id}`);
                 alert('تم الحذف بنجاح');
                 loadInitialData();
             } catch (err) {

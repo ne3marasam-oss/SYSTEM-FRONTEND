@@ -16,7 +16,7 @@ const JournalEntriesPage = () => {
     // 1. جلب السنوات الأكاديمية عند تحميل الصفحة
     const fetchAcademicYears = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/academic-years');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years');
             setAcademicYears(response.data);
             const activeYear = response.data.find(year => year.isActive);
             if (activeYear) {
@@ -38,8 +38,8 @@ const JournalEntriesPage = () => {
         try {
             const isSearch = params.academicYearId || params.startDate || params.endDate;
             const url = isSearch 
-                ? 'http://localhost:8080/api/journal-entries/search' 
-                : 'http://localhost:8080/api/journal-entries';
+                ? 'https://system-backend-rwsk.onrender.com/api/journal-entries/search' 
+                : 'https://system-backend-rwsk.onrender.com/api/journal-entries';
 
             const response = await axios.get(url, { params });
             setJournalEntries(response.data);

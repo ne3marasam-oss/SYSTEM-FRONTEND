@@ -42,9 +42,9 @@ const AddExpenseModal = ({ open, onClose, onExpenseAdded }) => {
 
     const fetchInitialData = async () => {
         try {
-            const academicYearsRes = await axios.get('http://localhost:8080/api/academic-years');
+            const academicYearsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years');
             setAcademicYears(academicYearsRes.data || []);
-            const accountsRes = await axios.get('http://localhost:8080/api/accounts');
+            const accountsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts');
             setAccounts(accountsRes.data || []);
         } catch (err) {
             console.error("فشل في جلب البيانات الأولية:", err);
@@ -70,7 +70,7 @@ const AddExpenseModal = ({ open, onClose, onExpenseAdded }) => {
                 ...expenseData,
                 expenseDate: `${expenseData.expenseDate}T00:00:00`
             };
-            await axios.post('http://localhost:8080/api/expenses', formattedExpenseData);
+            await axios.post('https://system-backend-rwsk.onrender.com/api/expenses', formattedExpenseData);
             onExpenseAdded();
             handleClose();
         } catch (err) {

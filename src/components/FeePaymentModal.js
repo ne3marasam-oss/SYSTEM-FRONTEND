@@ -34,7 +34,7 @@ const FeePaymentModal = ({ open, onClose, studentFee, onPaymentAdded }) => {
             let totalPaid = studentFee?.paidAmount || 0;
 
             try {
-                const response = await axios.get(`http://localhost:8080/api/payments/student-fee/${feeId}`);
+                const response = await axios.get(`https://system-backend-rwsk.onrender.com/api/payments/student-fee/${feeId}`);
                 if (response.data && Array.isArray(response.data)) {
                     totalPaid = response.data.reduce((sum, p) => sum + Number(p.amount || 0), 0);
                 }
@@ -145,7 +145,7 @@ const FeePaymentModal = ({ open, onClose, studentFee, onPaymentAdded }) => {
                 } : {})
             };
 
-            await axios.post('http://localhost:8080/api/payments', paymentData);
+            await axios.post('https://system-backend-rwsk.onrender.com/api/payments', paymentData);
             
             setPaymentSuccess(true);
             if (onPaymentAdded) {

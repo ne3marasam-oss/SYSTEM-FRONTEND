@@ -11,8 +11,8 @@ const FeeTypesPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_BASE_URL = 'http://localhost:8080/api/fee-types';
-    const YEARS_API_URL = 'http://localhost:8080/api/academic-years';
+    const API_BASE_URL = 'https://system-backend-rwsk.onrender.com/api/fee-types';
+    const YEARS_API_URL = 'https://system-backend-rwsk.onrender.com/api/academic-years';
 
     useEffect(() => {
         loadInitialData();

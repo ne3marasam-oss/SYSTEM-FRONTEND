@@ -38,7 +38,7 @@ const GeneralLedgerPage = () => {
     useEffect(() => {
         const fetchAccounts = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/accounts');
+                const response = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts');
                 setAccounts(response.data);
             } catch (err) {
                 console.error("Failed to fetch accounts:", err);
@@ -57,7 +57,7 @@ const GeneralLedgerPage = () => {
     setInitialBalance(0);
 
     try {
-        const response = await axios.get(`http://localhost:8080/api/journal-entries/account/${accountId}`);
+        const response = await axios.get(`https://system-backend-rwsk.onrender.com/api/journal-entries/account/${accountId}`);
         
         // التحقق من أن البيانات مصفوفة وليست فارغة
         const data = Array.isArray(response.data) ? response.data : [];

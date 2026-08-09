@@ -44,7 +44,7 @@ const DataMigrationPage = () => {
 
         try {
             // بناء URL ديناميكيًا بناءً على fileType
-            const uploadUrl = `http://localhost:8080/api/import/${fileType}`;
+            const uploadUrl = `https://system-backend-rwsk.onrender.com/api/import/${fileType}`;
             const response = await axios.post(uploadUrl, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',

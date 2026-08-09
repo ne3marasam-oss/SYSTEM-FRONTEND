@@ -32,8 +32,8 @@ const SalaryAdvance = () => {
   const fetchInitialData = async () => {
     try {
       const [empRes, advRes] = await Promise.all([
-        axios.get('http://localhost:8080/api/employees'),
-        axios.get('http://localhost:8080/api/salary-advances')
+        axios.get('https://system-backend-rwsk.onrender.com/api/employees'),
+        axios.get('https://system-backend-rwsk.onrender.com/api/salary-advances')
       ]);
       setEmployees(empRes.data);
       setSalaryAdvances(advRes.data);
@@ -76,7 +76,7 @@ const SalaryAdvance = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/api/salary-advances', payload);
+      const response = await axios.post('https://system-backend-rwsk.onrender.com/api/salary-advances', payload);
       
       if (response.status === 201 || response.status === 200) {
         setMessage('تم تسجيل السلفة بنجاح!');
@@ -105,7 +105,7 @@ const SalaryAdvance = () => {
       try {
         // إذا كان الباك إند يتطلب ID حقيقي، يجب إضافته في الـ Backend Entity
         // هنا نقوم بإرسال الـ id أو الـ createdAt كبديل مؤقت إذا قبله السيرفر، أو تعديل الـ API endpoint
-        await axios.delete(`http://localhost:8080/api/salary-advances/${targetId}`);
+        await axios.delete(`https://system-backend-rwsk.onrender.com/api/salary-advances/${targetId}`);
         
         setSalaryAdvances(prev => prev.filter(adv => (adv.id || adv.advanceId || adv.createdAt) !== targetId));
         setMessage('تم إلغاء السلفة وعمل القيد العكسي بنجاح!');

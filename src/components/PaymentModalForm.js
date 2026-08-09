@@ -70,7 +70,7 @@ const PaymentModalForm = ({ studentFee, onClose, onSuccess }) => {
             console.log('Sending payment data from PaymentModalForm:', paymentData);
 
             const response = await axios.post(
-                `http://localhost:8080/api/student-fees/record-payment`,
+                `https://system-backend-rwsk.onrender.com/api/student-fees/record-payment`,
                 paymentData
             );
 

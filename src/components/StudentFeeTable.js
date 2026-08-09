@@ -32,7 +32,7 @@ const Row = (props) => {
     const fetchPayments = async () => {
         if (!open) {
             try {
-                const response = await axios.get(`http://localhost:8080/api/payments/student-fee/${row.id}`);
+                const response = await axios.get(`https://system-backend-rwsk.onrender.com/api/payments/student-fee/${row.id}`);
                 setPayments(response.data);
             } catch (err) {
                 console.error("خطأ في جلب المدفوعات:", err);
@@ -229,7 +229,7 @@ const StudentFeeTable = () => {
     const fetchStudentFees = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:8080/api/student-fees');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/student-fees');
             setFees(response.data);
             setError(null);
         } catch (err) {
@@ -268,7 +268,7 @@ const StudentFeeTable = () => {
     const handleStatementClick = async (fee) => {
         setSelectedFee(fee);
         try {
-            const response = await axios.get(`http://localhost:8080/api/payments/student-fee/${fee.id}`);
+            const response = await axios.get(`https://system-backend-rwsk.onrender.com/api/payments/student-fee/${fee.id}`);
             setStudentPayments(response.data);
         } catch (err) {
             console.error("خطأ في جلب مدفوعات كشف الحساب:", err);

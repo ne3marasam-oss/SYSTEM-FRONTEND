@@ -25,23 +25,23 @@ const TransactionsPage = () => {
         setError(null);
         try {
             // جلب القيود المحاسبية
-            const transactionsRes = await axios.get('http://localhost:8080/api/transactions');
+            const transactionsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/transactions');
             setTransactions(Array.isArray(transactionsRes.data) ? transactionsRes.data : []);
 
             // جلب السنوات الأكاديمية
-            const academicYearsRes = await axios.get('http://localhost:8080/api/academic-years');
+            const academicYearsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/academic-years');
             setAcademicYears(Array.isArray(academicYearsRes.data) ? academicYearsRes.data : []);
 
             // جلب الحسابات (جديد)
-            const accountsRes = await axios.get('http://localhost:8080/api/accounts');
+            const accountsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts');
             setAccounts(Array.isArray(accountsRes.data) ? accountsRes.data : []);
 
             // جلب المدفوعات (جديد)
-            const paymentsRes = await axios.get('http://localhost:8080/api/payments');
+            const paymentsRes = await axios.get('https://system-backend-rwsk.onrender.com/api/payments');
             setPayments(Array.isArray(paymentsRes.data) ? paymentsRes.data : []);
 
             // جلب المصروفات
-            const expensesRes = await axios.get('http://localhost:8080/api/expenses');
+            const expensesRes = await axios.get('https://system-backend-rwsk.onrender.com/api/expenses');
             setExpenses(Array.isArray(expensesRes.data) ? expensesRes.data : []);
 
         } catch (err) {
@@ -66,7 +66,7 @@ const TransactionsPage = () => {
 
     const fetchTransactions = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/transactions');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/transactions');
             setTransactions(Array.isArray(response.data) ? response.data : []);
         } catch (err) {
             console.error('Error re-fetching transactions after an operation:', err);
@@ -87,7 +87,7 @@ const TransactionsPage = () => {
     const handleDeleteTransaction = async (id) => {
         if (window.confirm('هل أنت متأكد من رغبتك في حذف هذا القيد المحاسبي؟')) {
             try {
-                await axios.delete(`http://localhost:8080/api/transactions/${id}`);
+                await axios.delete(`https://system-backend-rwsk.onrender.com/api/transactions/${id}`);
                 fetchTransactions();
                 alert('تم حذف القيد المحاسبي بنجاح.');
             } catch (err) {
@@ -107,11 +107,11 @@ const TransactionsPage = () => {
         try {
             if (selectedTransaction) {
                 // تعديل قيد محاسبي موجود
-                await axios.put(`http://localhost:8080/api/transactions/${selectedTransaction.id}`, transactionData);
+                await axios.put(`https://system-backend-rwsk.onrender.com/api/transactions/${selectedTransaction.id}`, transactionData);
                 alert('تم تحديث القيد المحاسبي بنجاح!');
             } else {
                 // إضافة قيد محاسبي جديد
-                await axios.post('http://localhost:8080/api/transactions', transactionData);
+                await axios.post('https://system-backend-rwsk.onrender.com/api/transactions', transactionData);
                 alert('تم إضافة قيد محاسبي بنجاح!');
             }
             setShowForm(false);

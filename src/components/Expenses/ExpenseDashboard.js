@@ -26,7 +26,7 @@ const ExpenseDashboard = () => {
 
    const fetchAccounts = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/accounts'); // تم تصحيح المنفذ إلى 8080
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts'); // تم تصحيح المنفذ إلى 8080
             const data = response.data;
             const accountsList = Array.isArray(data) ? data : (data.content || data.data || []);
             setAccounts(accountsList);
@@ -108,7 +108,7 @@ const ExpenseDashboard = () => {
 const handleReimburseExpense = async (id, paidFromAccountId) => {
     try {
         // تم تغيير axios.post إلى axios.put لتتطابق مع الـ Backend (PutMapping)
-        await axios.put(`http://localhost:8080/api/expenses/${id}/reimburse`, {
+        await axios.put(`https://system-backend-rwsk.onrender.com/api/expenses/${id}/reimburse`, {
             paidFromAccountId: paidFromAccountId
         });
         

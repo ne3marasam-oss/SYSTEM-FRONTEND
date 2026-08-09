@@ -15,7 +15,7 @@ const StudentStatementModal = ({ open, onClose, studentFee, payments = [] }) => 
     // جلب بيانات المدرسة عند فتح النافذة
     useEffect(() => {
         if (open) {
-            fetch('http://localhost:8080/api/schools')
+            fetch('https://system-backend-rwsk.onrender.com/api/schools')
                 .then(res => res.json())
                 .then(data => {
                     console.log("School API Response:", data);
@@ -55,7 +55,7 @@ const StudentStatementModal = ({ open, onClose, studentFee, payments = [] }) => 
     const logoFileName = schoolInfo?.logo || schoolInfo?.schoolLogo || 'logo.jpg';
     const schoolLogoUrl = logoFileName.startsWith('http') 
         ? logoFileName 
-        : `http://localhost:8080/uploads/${logoFileName}`; // قم بتعديل مجلد uploads إذا كان مسار الصور في الباك إند مختلفاً
+        : `https://system-backend-rwsk.onrender.com/uploads/${logoFileName}`; // قم بتعديل مجلد uploads إذا كان مسار الصور في الباك إند مختلفاً
 
     return (
         <Dialog open={open} onClose={open ? onClose : undefined} maxWidth="md" fullWidth>
@@ -71,8 +71,8 @@ const StudentStatementModal = ({ open, onClose, studentFee, payments = [] }) => 
                             alt="شعار المدرسة" 
                             onError={(e) => {
                                 // إذا فشل تحميل الصورة من المسار الأول، جرب مسار الجذر المباشر
-                                if (e.target.src !== `http://localhost:8080/${logoFileName}`) {
-                                    e.target.src = `http://localhost:8080/${logoFileName}`;
+                                if (e.target.src !== `https://system-backend-rwsk.onrender.com/${logoFileName}`) {
+                                    e.target.src = `https://system-backend-rwsk.onrender.com/${logoFileName}`;
                                 } else {
                                     e.target.style.display = 'none'; // إخفاء الصورة نهائياً إذا لم تتوجد لتفادي الأخطاء
                                 }

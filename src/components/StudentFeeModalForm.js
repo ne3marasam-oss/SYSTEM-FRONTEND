@@ -95,10 +95,10 @@ const StudentFeeModalForm = ({ studentFee, students, feeTypes, academicYears, on
             };
 
             if (formData.id) {
-                response = await axios.put(`http://localhost:8080/api/student-fees/${formData.id}`, dataToSend);
+                response = await axios.put(`https://system-backend-rwsk.onrender.com/api/student-fees/${formData.id}`, dataToSend);
                 setSuccessMessage('تم تحديث رسوم الطالب بنجاح!');
             } else {
-                response = await axios.post('http://localhost:8080/api/student-fees', dataToSend);
+                response = await axios.post('https://system-backend-rwsk.onrender.com/api/student-fees', dataToSend);
                 setSuccessMessage('تمت إضافة رسوم الطالب بنجاح!');
             }
             console.log('StudentFee saved/updated:', response.data);

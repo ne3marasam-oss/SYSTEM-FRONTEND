@@ -18,7 +18,7 @@ const SchoolPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:8080/api/schools');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/schools');
             if (Array.isArray(response.data) && response.data.length > 0) {
                 setSchool(response.data[0]);
             } else if (response.data) {
@@ -62,13 +62,13 @@ const SchoolPage = () => {
 
             if (school && school.id) {
                 // تعديل مدرسة موجودة مع الشعار
-                await axios.post(`http://localhost:8080/api/schools/update-with-logo/${school.id}`, formData, {
+                await axios.post(`https://system-backend-rwsk.onrender.com/api/schools/update-with-logo/${school.id}`, formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 });
                 alert('تم تحديث معلومات المدرسة والشعار بنجاح!');
             } else {
                 // إذا لم تكن موجودة، يمكن استخدام الـ POST العادي أو إنشاء واحدة
-                await axios.post('http://localhost:8080/api/schools', formData, {
+                await axios.post('https://system-backend-rwsk.onrender.com/api/schools', formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 });
                 alert('تم إضافة معلومات المدرسة بنجاح!');
@@ -120,7 +120,7 @@ const SchoolPage = () => {
                             {school.logoUrl && (
                                 <div className="school-logo-preview" style={{ textAlign: 'center', marginBottom: '20px' }}>
                                     <img 
-                                        src={`http://localhost:8080${school.logoUrl}`} 
+                                        src={`https://system-backend-rwsk.onrender.com${school.logoUrl}`} 
                                         alt="شعار المدرسة" 
                                         style={{ width: '120px', height: '120px', objectFit: 'contain', borderRadius: '50%', border: '2px solid #ddd' }} 
                                     />

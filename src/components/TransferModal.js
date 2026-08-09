@@ -24,7 +24,7 @@ const TransferModal = ({ show, handleClose, onTransferSuccess }) => {
 
     const fetchAccounts = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/accounts');
+            const response = await axios.get('https://system-backend-rwsk.onrender.com/api/accounts');
             setAccounts(response.data);
         } catch (err) {
             setError("فشل في جلب قائمة الحسابات");
@@ -53,7 +53,7 @@ const TransferModal = ({ show, handleClose, onTransferSuccess }) => {
 
         try {
             // إرسال البيانات إلى السيرفر (TransferDto)
-            const response = await axios.post('http://localhost:8080/api/transfers', transferData);
+            const response = await axios.post('https://system-backend-rwsk.onrender.com/api/transfers', transferData);
             
             if (response.status === 200) {
                 alert("تم التحويل بنجاح");
