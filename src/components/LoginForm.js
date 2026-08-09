@@ -39,7 +39,7 @@ export default function Login({ onLogin }) {
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      background: 'linear-gradient(135deg, #064e3b 0%, #022c22 100%)', // خلفية متدرجة بالأخضر الداكن
+      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', // خلفية متدرجة بالكحلي المزرق الفاخر
       fontFamily: 'Cairo, sans-serif',
       direction: 'rtl'
     }}>
@@ -49,11 +49,11 @@ export default function Login({ onLogin }) {
         borderRadius: '16px',
         boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
         width: '400px',
-        borderTop: '6px solid #10b981' // لمسة جمالية علوية بالأخضر الفاتح المتميز
+        borderTop: '6px solid #d97706' // لمسة جمالية علوية باللون الذهبي الملكي
       }}>
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <h2 style={{ color: '#064e3b', fontWeight: 'bold', margin: '0 0 10px 0', fontSize: '24px' }}>تسجيل الدخول</h2>
-          <p style={{ color: '#6b7280', fontSize: '14px', margin: 0 }}>نظام إدارة المدرسة SAS</p>
+          <h2 style={{ color: '#0f172a', fontWeight: 'bold', margin: '0 0 10px 0', fontSize: '24px' }}>تسجيل الدخول</h2>
+          <p style={{ color: '#64748b', fontSize: '14px', margin: 0 }}>نظام إدارة المدرسة SAS</p>
         </div>
         
         {error && (
@@ -72,7 +72,7 @@ export default function Login({ onLogin }) {
         )}
         
         <div style={{ marginBottom: '20px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', color: '#374151', fontWeight: '600', fontSize: '14px' }}>اسم المستخدم</label>
+          <label style={{ display: 'block', marginBottom: '8px', color: '#334155', fontWeight: '600', fontSize: '14px' }}>اسم المستخدم</label>
           <input 
             type="text" 
             value={username} 
@@ -83,19 +83,19 @@ export default function Login({ onLogin }) {
               width: '100%',
               padding: '12px 15px',
               borderRadius: '8px',
-              border: '1px solid #d1d5db',
+              border: '1px solid #cbd5e1',
               outline: 'none',
               fontSize: '14px',
               transition: 'all 0.3s ease',
               boxSizing: 'border-box'
             }}
-            onFocus={(e) => e.target.style.borderColor = '#059669'}
-            onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+            onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+            onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
           />
         </div>
 
         <div style={{ marginBottom: '25px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', color: '#374151', fontWeight: '600', fontSize: '14px' }}>كلمة المرور</label>
+          <label style={{ display: 'block', marginBottom: '8px', color: '#334155', fontWeight: '600', fontSize: '14px' }}>كلمة المرور</label>
           <input 
             type="password" 
             value={password} 
@@ -106,14 +106,14 @@ export default function Login({ onLogin }) {
               width: '100%',
               padding: '12px 15px',
               borderRadius: '8px',
-              border: '1px solid #d1d5db',
+              border: '1px solid #cbd5e1',
               outline: 'none',
               fontSize: '14px',
               transition: 'all 0.3s ease',
               boxSizing: 'border-box'
             }}
-            onFocus={(e) => e.target.style.borderColor = '#059669'}
-            onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+            onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+            onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
           />
         </div>
 
@@ -122,7 +122,7 @@ export default function Login({ onLogin }) {
           style={{
             width: '100%',
             padding: '12px',
-            background: '#064e3b', // لون أخضر داكن فخم للأزرار
+            background: '#0f172a', // لون كحلي مزرق متناسق للأزرار
             color: '#fff',
             border: 'none',
             borderRadius: '8px',
@@ -130,10 +130,10 @@ export default function Login({ onLogin }) {
             fontSize: '16px',
             fontWeight: 'bold',
             transition: 'background 0.3s ease',
-            boxShadow: '0 4px 6px rgba(6, 78, 59, 0.2)'
+            boxShadow: '0 4px 6px rgba(15, 23, 42, 0.2)'
           }}
-          onMouseOver={(e) => e.target.style.background = '#047857'}
-          onMouseOut={(e) => e.target.style.background = '#064e3b'}
+          onMouseOver={(e) => e.target.style.background = '#1e293b'}
+          onMouseOut={(e) => e.target.style.background = '#0f172a'}
         >
           دخول للنظام
         </button>
