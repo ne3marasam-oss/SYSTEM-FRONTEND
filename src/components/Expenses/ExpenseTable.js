@@ -27,7 +27,7 @@ const ExpenseTable = ({ expenses, onEdit, onDelete, onCancel, onReimburse }) => 
                 if (rawCashList.length > 0) setSelectedAccountId(rawCashList[0].id);
 
                 // جلب بيانات المدرسة
-                const schoolRes = await axios.get('https://system-backend-rwsk.onrender.com/api/school-info');
+                const schoolRes = await axios.get('https://system-backend-rwsk.onrender.com/api/schools');
                 if (schoolRes.data) {
                     const data = schoolRes.data;
                     const name = data.schoolName || data.name || data.arabicName || 'اسم المدرسة';
