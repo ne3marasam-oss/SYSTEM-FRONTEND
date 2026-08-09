@@ -34,48 +34,48 @@ import logoIcon from '../assets/images/sas_logo_no.png';
 
 const HomePage = ({ onLogout }) => {
 
-    // تعريف بيانات بطاقات الميزات مع توحيد طابع الألوان الاحترافي المتناسق مع الأخضر الداكن
+    // تعريف بيانات بطاقات الميزات مع ألوان الأيقونات الأصلية المتميزة
     const featureCards = [
         {
             title: 'إدارة المدرسة',
             description: 'تعديل وعرض بيانات المدرسة الأساسية.',
             icon: FaSchool,
             link: '/school',
-            color: '#064e3b',
+            color: '#2196F3',
         },
         {
             title: 'الطلاب',
             description: 'إضافة وعرض بيانات الطلاب.',
             icon: FaUserGraduate,
             link: '/students',
-            color: '#047857',
+            color: '#795548',
         },
         {
             title: 'السنوات الأكاديمية',
             description: 'إضافة وعرض السنوات والفصول الدراسية.',
             icon: FaCalendarAlt,
             link: '/academic-years',
-            color: '#059669',
+            color: '#607D8B',
         },
         {
             title: 'إدارة الموظفين',
             description: 'إضافة وتعديل وحذف بيانات الموظفين',
             icon: FaUsers,
-            color: '#10b981',
+            color: '#ff9800',
             link: '/employees'
         },
         {
             title: 'إدارة الرواتب',
             description: 'إنشاء ومتابعة سجلات الرواتب للموظفين',
             icon: FaHandHoldingUsd,
-            color: '#064e3b',
+            color: '#9c27b0',
             link: '/payroll'
         },
         {
             title: 'سلف الموظفين',
             description: 'إدارة السلف الشهرية وخصمها من الرواتب.',
             icon: FaHandHoldingUsd,
-            color: '#047857',
+            color: '#007bff',
             link: '/salary-advances'
         },
         {
@@ -83,69 +83,69 @@ const HomePage = ({ onLogout }) => {
             description: 'نقل الأرصدة بين الصناديق والبنوك',
             icon: FaExchangeAlt,
             link: '/money-transfer',
-            color: '#059669',
+            color: '#0288d1',
         },
         {
             title: 'إدارة المصروفات والفواتير',
             description: 'تسجيل وتتبع جميع مصروفات وفواتير المدرسة.',
             icon: FaMoneyBillWave,
             link: '/expenses',
-            color: '#064e3b',
+            color: '#F44336',
         },
         {
             title: 'الدخل والإيرادات',
             description: 'عرض وتتبع جميع الدفعات والإيرادات من الطلاب.',
             icon: FaMoneyCheckAlt,
             link: '/income-revenues',
-            color: '#047857',
+            color: '#4CAF50',
         },
         {
             title: 'تقارير الرسوم',
             description: 'إنشاء وعرض تقارير شاملة عن رسوم الطلاب.',
             icon: FaChartBar,
             link: '/student-fees-reports',
-            color: '#059669',
+            color: '#d97706', // لون ذهبي متناسق
         },
         {
             title: 'إدارة أنواع الرسوم',
             description: 'تحديد أنواع الرسوم الدراسية والأنشطة.',
             icon: FaFileInvoiceDollar,
             link: '/fee-types',
-            color: '#10b981',
+            color: '#4CAF50',
         },
         {
             title: 'تسديد رسوم الطلاب',
             description: 'عرض جميع رسوم الطلاب في جدول تفاعلي.',
             icon: FaFileInvoiceDollar,
             link: '/student-fees-table',
-            color: '#064e3b',
+            color: '#2196F3',
         },
         {
             title: 'دفتر الأستاذ العام',
             description: 'عرض وتتبع جميع الحركات المحاسبية المفصلة.',
             icon: FaBookOpen,
             link: '/general-ledger',
-            color: '#047857',
+            color: '#7B1FA2',
         },
         {
             title: 'ميزان المراجعة',
             description: 'عرض أرصدة الحسابات المدينة والدائنة.',
             icon: FaBalanceScale,
-            color: '#059669',
+            color: '#4CAF50',
             link: '/trial-balance'
         },
         {
             title: 'شجرة الحسابات',
             description: 'إدارة جميع الحسابات الرئيسية والفرعية.',
             icon: FaBalanceScale,
-            color: '#10b981',
+            color: '#ff9800',
             link: '/chart-of-accounts'
         },
         {
             title: 'القيود المحاسبية',
             description: 'عرض جميع القيود اليومية الناتجة عن العمليات المالية.',
             icon: FaBookOpen,
-            color: '#064e3b',
+            color: '#9c27b0',
             link: '/journal-entries'
         },
         {
@@ -153,7 +153,7 @@ const HomePage = ({ onLogout }) => {
             description: 'إنشاء واستعادة النسخ الاحتياطية لقاعدة البيانات.',
             icon: FaDatabase,
             link: '/backup-restore',
-            color: '#047857',
+            color: '#1976d2',
         },
     ];
 
@@ -228,11 +228,11 @@ const HomePage = ({ onLogout }) => {
                                         justifyContent: 'center',
                                         p: 2,
                                         borderRadius: '12px',
-                                        borderTop: `4px solid ${card.color}`,
+                                        borderTop: '4px solid #d97706', // حافة علوية باللون الذهبي الفاخر
                                         transition: 'transform 0.2s, box-shadow 0.2s',
                                         '&:hover': {
                                             transform: 'translateY(-5px)',
-                                            boxShadow: '0 10px 20px rgba(6, 78, 59, 0.15)',
+                                            boxShadow: '0 10px 20px rgba(217, 119, 6, 0.2)',
                                         },
                                         cursor: 'pointer',
                                         background: '#ffffff'
@@ -240,7 +240,7 @@ const HomePage = ({ onLogout }) => {
                                 >
                                     <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', p: '0 !important' }}>
                                         {React.createElement(card.icon, {
-                                            style: { fontSize: '36px', color: card.color, marginBottom: '12px' }
+                                            style: { fontSize: '36px', color: card.color, marginBottom: '12px' } // استعادة الألوان الأصلية للأيقونات
                                         })}
                                         <Typography variant="subtitle2" component="h3" gutterBottom sx={{ color: '#1f2937', mb: 1, fontWeight: 'bold', fontSize: '15px' }}>
                                             {card.title}
