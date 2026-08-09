@@ -1,7 +1,7 @@
 // src/services/AcademicYearService.js
 import axios from 'axios';
 
-const API_URL = ' https://system-backend-h8kw.onrender.com/api/academic-years'; // تأكد من هذا المسار
+const API_URL = 'https://system-backend-rwsk.onrender.com/api/academic-years'; // تأكد من هذا المسار
 
 class AcademicYearService {
     getAllAcademicYears() {
