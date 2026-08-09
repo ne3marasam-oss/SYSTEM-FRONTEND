@@ -1,0 +1,157 @@
+/* src/components/EmployeeList.css */
+
+.employee-list-container {
+    margin-top: 30px;
+}
+
+.employee-list-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.8em;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.employee-list-container h2::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 3px;
+    background-color: #1a237e ;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+/* شريط البحث وزر الإضافة */
+/* تم إزالة .add-button-container لأنك لا ترغب في استخدام div */
+.input-group {
+    direction: ltr;
+    border-radius: 0.25rem;
+}
+
+.input-group .form-control {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    text-align: right;
+}
+
+.input-group .btn-outline-primary {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+}
+
+/* تنسيقات الأزرار العامة */
+.btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.btn i {
+    margin-left: 8px;
+    font-size: 1.1em;
+}
+
+/* الأزرار الأساسية - استخدام !important لتجاوز Bootstrap */
+.btn-success { background-color: #28a745 !important; border-color: #28a745 !important; color: white !important; }
+.btn-warning { background-color: #ffc107 !important; border-color: #ffc107 !important; color: #212529 !important; }
+.btn-danger { background-color: #dc3545 !important; border-color: #dc3545 !important; color: white !important; }
+.btn-info { background-color: #17a2b8 !important; border-color: #17a2b8 !important; color: white !important; }
+.btn-primary { background-color: #0d6efd !important; border-color: #1a237e !important; color: white !important; }
+
+/* تنسيق زر الإضافة - تم التعديل هنا لتوسيط الزر وتصغير حجمه مباشرة */
+.add-employee-btn {
+    background-color: #1a237e !important;
+    color: white !important;
+    padding: 6px 12px !important;
+    font-size: 0.85em !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+
+    /* هذا هو التعديل الأساسي للتوسيط */
+    display: block !important;
+    margin: 10px auto 20px auto !important;
+}
+
+.add-employee-btn:hover {
+    background-color: #1a237e !important;
+}
+
+/* القاعدة الجديدة لتصغير حجم أيقونة زر الإضافة */
+.add-employee-btn i {
+    font-size: 0.8em !important;
+    margin-right: 5px !important;
+    margin-left: 0 !important;
+}
+
+
+/* تنسيق الجدول */
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    direction: rtl;
+    font-size: 0.95em;
+}
+
+.employee-table th,
+.employee-table td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.employee-table thead.table-primary th {
+    background-color: #1a237e !important;
+    color: white !important;
+    font-weight: bold;
+    border-color:#1a237e !important;
+}
+
+/* صفوف الجدول */
+.employee-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.employee-table tbody tr:hover {
+    background-color: #e2f0fb;
+}
+
+/* تنسيق عمود الإجراءات */
+.actions-column {
+    white-space: nowrap;
+    min-width: 220px;
+    text-align: center;
+}
+
+/* تنسيقات الشارات (Status Badges) */
+.badge {
+    padding: 0.5em 0.8em;
+    border-radius: 0.35rem;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* رسائل التنبيه */
+.alert {
+    text-align: right;
+    direction: rtl;
+    padding: 1rem 1.25rem;
+}
+
+.alert .btn-close {
+    margin-left: -1rem;
+    margin-right: 0;
+    float: left;
+}

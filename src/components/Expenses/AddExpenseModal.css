@@ -1,0 +1,21 @@
+/* src/components/AddExpenseModal.css */
+.styled-textarea {
+    width: 100%;
+    padding: 18.5px 14px;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.styled-textarea:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.form-field {
+    margin-bottom: 20px;
+}

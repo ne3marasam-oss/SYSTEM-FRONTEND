@@ -1,0 +1,193 @@
+/* src/pages/AcademicYearsPage.css */
+
+/*
+  تحسين التخطيط العام للصفحة
+  - استخدام Flexbox لتباعد أفضل.
+  - لوحة ألوان حديثة.
+*/
+:root {
+    --primary-color: #1a237e;
+    --primary-dark: #1a237e;
+    --success-color: #1a237e;
+    --danger-color: #dc3545;
+    --text-color: #333;
+    --bg-light: #f8f9fa;
+    --bg-card: #ffffff;
+    --border-color: #dee2e6;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+.academic-years-page {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.academic-years-page h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/*
+  تحسين زر الإضافة ليكون أكثر بروزًا
+*/
+.add-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+.add-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/*
+  تحسين تنسيق الجدول
+*/
+.academic-year-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.academic-year-table th, .academic-year-table td {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.academic-year-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.academic-year-table tbody tr:nth-child(even) {
+    background-color: #f2f7fd;
+}
+
+.academic-year-table tbody tr:hover {
+    background-color: #e9f5ff;
+}
+
+/*
+  تنسيق أزرار التعديل والحذف
+  هنا التعديل الأساسي لترتيب الأزرار بجانب بعضها
+*/
+.action-buttons {
+    /* استخدام display: flex بشكل أكثر تحديدًا */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.edit-button, .delete-button {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-button {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+.delete-button {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+.action-buttons .fa-solid {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.error-message {
+    color: var(--danger-color);
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+}
+
+/*
+  تنسيق العنوان والخط السفلي
+*/
+.academic-year-list-container {
+    margin-top: 30px;
+}
+
+.academic-year-list-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.8em;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.academic-year-list-container h2::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    margin-top: 10px;
+}

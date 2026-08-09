@@ -1,0 +1,182 @@
+/* src/pages/ExpensesPage.css */
+
+/* التنسيق العام للصفحة */
+.MuiContainer-root {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif; /* يرجى التأكد من استيراد هذا الخط */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #f8f9fa;
+}
+
+/* عنوان الصفحة */
+.MuiTypography-h4 {
+    color: #2c3e50;
+    font-weight: 700;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 25px !important;
+}
+
+/* زر إضافة مصروف جديد */
+.MuiButton-containedPrimary {
+    background-color: #27ae60 !important;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.25) !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.MuiButton-containedPrimary:hover {
+    background-color: #2ecc71 !important;
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.35) !important;
+}
+
+/* لوحة الفلاتر */
+.MuiPaper-root.MuiPaper-elevation2 {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 10px !important;
+}
+
+.MuiTypography-h6 {
+    color: #34495e;
+    font-weight: bold;
+    margin-bottom: 15px !important;
+}
+
+/* حقول الفلاتر - التغييرات الجديدة هنا */
+.MuiInputBase-root {
+    /* يجعل الحقول أكبر */
+    height: 30px;
+    border-radius: 1px !important;
+    font-size: 1rem;
+    color: #090909;
+}
+
+.MuiInputLabel-root {
+    /* يرفع تسمية الحقل (label) ليظهر بشكل أفضل */
+    top: 50%;
+    transform: translateY(-50%) !important;
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.MuiInputLabel-root.Mui-focused,
+.MuiInputLabel-root.MuiInputLabel-shrink {
+    /* ينسق التسمية عند التركيز أو وجود قيمة */
+    transform: translateY(-100%) scale(0.75) !important;
+    background-color: white;
+    padding: 0 4px;
+    margin-right: -4px;
+    color: #3498db !important;
+}
+
+.MuiInputBase-input {
+    /* يجعل نص الإدخال أكبر وأكثر وضوحًا */
+    padding: 16.5px 14px !important;
+}
+
+/* لوحة إجمالي المصروفات */
+.MuiPaper-root.MuiPaper-elevation3 {
+    background-color: #ecf0f1;
+    border-radius: 12px;
+    padding: 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 20px !important;
+    border-right: 5px solid #e74c3c;
+}
+
+.MuiPaper-root.MuiPaper-elevation3 .MuiTypography-h6 {
+    color: #e74c3c;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* جدول المصروفات */
+.MuiTableContainer-root {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden;
+}
+
+.MuiTableHead-root {
+    background-color: #34495e;
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+    color: black;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    border-bottom: none;
+}
+
+.MuiTableRow-root {
+    transition: background-color 0.2s ease;
+}
+
+.MuiTableRow-root:nth-of-type(even) {
+    background-color: white;
+}
+
+.MuiTableRow-root:hover {
+    background-color: #ecf0f1;
+}
+
+.MuiTableCell-root {
+    font-size: 0.9rem;
+    color: white;
+    border-color: #e0e0e0;
+}
+
+/* أيقونات الحالة */
+.MuiSvgIcon-root.Mui-success {
+    color: #2ecc71;
+}
+
+.MuiSvgIcon-root.Mui-warning {
+    color: #f1c40f;
+}
+
+/* أزرار الإجراءات */
+.MuiIconButton-root {
+    color: #3498db;
+}
+
+.MuiIconButton-root:hover {
+    color: #2980b9;
+}
+
+/* رسالة عدم وجود بيانات */
+.MuiTableCell-root[colspan] {
+    font-style: italic;
+    color: #777;
+}
+.payroll-list-container {
+    margin-top: 30px;
+}
+
+.expenses-list-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.8em;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.expenses-list-container h2::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 3px;
+    background-color: #007bff ;
+    border-radius: 2px;
+    margin-top: 10px;
+}

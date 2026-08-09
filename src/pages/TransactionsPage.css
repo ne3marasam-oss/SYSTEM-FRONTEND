@@ -1,0 +1,125 @@
+/* src/pages/TransactionsPage.css */
+.transactions-page-container {
+    max-width: 1500px; /* زيادة العرض للجدول الكبير جداً */
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    direction: rtl;
+}
+
+.transactions-page-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.add-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+.transactions-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.transactions-list th,
+.transactions-list td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: right;
+    font-size: 0.9em; /* تصغير الخط قليلاً ليناسب الجدول الأكبر */
+}
+
+.transactions-list th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.transactions-list tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.transactions-list tr:hover {
+    background-color: #e2f4ff;
+}
+
+.transactions-list td button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.transactions-list td .edit-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.transactions-list td .edit-button:hover {
+    background-color: #0056b3;
+}
+
+.transactions-list td .delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.transactions-list td .delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Common loading, error, no-data styles */
+.loading, .error-message, .no-data-message {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+
+.loading {
+    background-color: #e0f7fa;
+    color: #00796b;
+    border: 1px solid #00bcd4;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef5350;
+}
+
+.no-data-message {
+    background-color: #fff3e0;
+    color: #f57c00;
+    border: 1px solid #ff9800;
+}

@@ -1,0 +1,93 @@
+/* src/components/StudentForm.css */
+/* ... التنسيقات الحالية للنموذج ... */
+
+/* تنسيقات النافذة المنبثقة */
+/* تنسيقات النافذة المنبثقة */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000 !important; /* خلفية سوداء صلبة بشكل إلزامي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #090909;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px black;
+    text-align: right;
+    max-width: 500px;
+    width: 90%;
+    animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content h4 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #007bff;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.confirmation-details p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.confirmation-details p strong {
+    color: #555;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.confirm-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}

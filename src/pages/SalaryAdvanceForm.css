@@ -1,0 +1,98 @@
+/* E:\sasing\com.sch.sasing-frontend\src\pages\SalaryAdvanceForm.css */
+
+/* نمط الحاوية الرئيسية للصفحة */
+
+
+/* E:\sasing\com.sch.sasing-frontend\src\pages\SalaryAdvanceForm.css */
+
+/* ضمان اتجاه النص والمكونات من اليمين لليسار للغة العربية */
+.advance-container {
+    direction: rtl;
+    text-align: right;
+    background-color: #f0f2f5; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* ضبط اتجاه النصوص داخل بطاقات Material-UI */
+.advance-paper {
+    direction: rtl;
+    text-align: right;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* تأثير عند المرور بالماوس على البطاقة */
+.advance-paper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* تحسينات على الخطوط لتبدو أكثر احترافية */
+.advance-form-title,
+.advance-table-title {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+}
+
+/* تحسين تنسيق الجدول */
+.MuiTableContainer-root {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* لون للصف الزوجي في الجدول */
+.MuiTableRow-root:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* ضبط اتجاه حقول الإدخال والـ Autocomplete لتدعم العربية بسلاسة */
+.MuiInputBase-root {
+    direction: rtl;
+}
+
+.MuiInputLabel-root {
+    right: 24px;
+    left: auto !important;
+    transform-origin: top right !important;
+}
+
+.MuiInputLabel-shrink {
+    transform: translate(0, -9px) scale(0.75) !important;
+}
+
+
+/* نمط البطاقات (Paper components) */
+.advance-paper {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* ظل أكثر بروزًا */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* تأثير عند المرور بالماوس على البطاقة */
+.advance-paper:hover {
+    transform: translateY(-5px); /* رفع البطاقة قليلاً */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* تحسينات على الخطوط لتبدو أكثر احترافية */
+.advance-form-title,
+.advance-table-title {
+   font-family: 'Cairo', sans-serif;
+
+    font-weight: 600;
+}
+
+/* تحسين تنسيق الجدول */
+.MuiTableContainer-root {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* لون للصف الزوجي في الجدول */
+.MuiTableRow-root:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}

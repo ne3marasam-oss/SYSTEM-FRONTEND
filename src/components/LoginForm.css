@@ -1,0 +1,54 @@
+/* src/components/LoginForm.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* لجعلها تأخذ كامل ارتفاع الشاشة */
+    background-color: #f8f9fa; /* لون خلفية خفيف */
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px; /* تحديد أقصى عرض للبطاقة */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-card .card-title {
+    font-weight: 700;
+    color: #0056b3; /* لون أزرق داكن للعنوان */
+}
+
+.login-card .form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.login-card .form-control {
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.login-card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0.3rem;
+}
+
+.login-card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+    font-size: 0.9rem;
+    text-align: center;
+}

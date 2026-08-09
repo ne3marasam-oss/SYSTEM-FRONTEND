@@ -1,0 +1,122 @@
+/* src/components/AcademicYearForm.css */
+/* يمكنك نسخ ولصق معظم التنسيقات من StudentForm.css وتغيير الألوان أو الفئات إذا أردت تمييزها */
+/* الحاوية الرئيسية */
+.academic-year-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: #f8fafc; /* لون خلفية هادئ جداً */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    padding: 20px;
+}
+
+/* العنوان الرئيسي */
+.main-header {
+    color: #1e293b;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* البطاقة التي تحتوي الفورم */
+.form-card-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* ظل ناعم */
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-sub-header {
+    color: #475569;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* تنسيق مجموعات الإدخال */
+.input-field-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.input-field-group input {
+    padding: 12px 15px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #fcfcfc;
+}
+
+.input-field-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    background-color: #fff;
+}
+
+/* صف الأزرار */
+.button-actions-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn-add-blue, .btn-cancel-gray {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    font-size: 1rem;
+}
+
+.btn-add-blue {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-add-blue:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-cancel-gray {
+    background-color: #64748b;
+    color: white;
+}
+
+/* لإجبار حقل التاريخ على التنسيق الإنجليزي */
+.input-field-group input[type="date"] {
+    direction: ltr; /* التواريخ تظهر من اليسار لليمين */
+    text-align: left;
+    font-family: 'Arial', sans-serif; /* لضمان ظهور الأرقام بالإنجليزية */
+}
+
+/* لمنع المتصفح من تحويل الأرقام للهندية/العربية في بعض الأنظمة */
+.input-field-group input {
+    font-variant-numeric: tabular-nums;
+}
+
+.btn-cancel-gray:hover {
+    background-color: #475569;
+}

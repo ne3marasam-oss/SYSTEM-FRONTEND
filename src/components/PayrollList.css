@@ -1,0 +1,198 @@
+/* src/components/PayrollList.css */
+
+.payroll-list-container {
+    margin-top: 30px;
+}
+
+.payroll-list-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.8em;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.payroll-list-container h2::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 3px;
+    background-color: #007bff ;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+/* تنسيق حقول الفلترة */
+.payroll-list-container .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة لليمين في RTL */
+}
+
+.payroll-list-container .form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #343a40;
+}
+
+.payroll-list-container .form-select {
+    width: auto; /* يجعل القائمة المنسدلة تأخذ عرض المحتوى */
+    min-width: 150px;
+    text-align: right; /* محاذاة النص داخل القائمة لليمين */
+}
+
+
+/* تنسيق الجدول */
+.payroll-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    direction: rtl; /* هام جداً لجعل الجدول RTL */
+    font-size: 0.95em;
+}
+
+.payroll-table th,
+.payroll-table td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: right; /* محاذاة النص لليمين */
+    vertical-align: middle;
+}
+
+.payroll-table thead.table-primary th {
+    background-color: #007bff !important; /* لون أزرق لرأس الجدول */
+    color: white !important; /* نص أبيض */
+    font-weight: bold;
+    border-color: #007bff !important;
+}
+
+/* صفوف الجدول */
+.payroll-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.payroll-table tbody tr:hover {
+    background-color: #e2f0fb;
+}
+
+/* تنسيق عمود الإجراءات */
+.actions-column {
+    white-space: nowrap;
+    min-width: 180px; /* لتوفير مساحة كافية للأزرار */
+    text-align: center;
+}
+
+/* تنسيقات الأزرار (نفس فئات EmployeeList) */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-left: 8px; /* مسافة بين الأيقونة والنص في RTL */
+    font-size: 1.1em;
+}
+
+.btn-success { background-color: #28a745 !important; border-color: #28a745 !important; color: white !important; }
+.btn-warning { background-color: #ffc107 !important; border-color: #ffc107 !important; color: #212529 !important; }
+.btn-danger { background-color: #dc3545 !important; border-color: #dc3545 !important; color: white !important; }
+.btn-info { background-color: #17a2b8 !important; border-color: #17a2b8 !important; color: white !important; }
+.btn-primary { background-color: #0d6efd !important; border-color: #0d6efd !important; color: white !important; }
+.btn-secondary { background-color: #6c757d !important; border-color: #6c757d !important; color: white !important; }
+
+
+/* رسائل التنبيه */
+.alert {
+    text-align: right;
+    direction: rtl;
+    padding: 1rem 1.25rem;
+}
+
+.alert .btn-close {
+    margin-left: -1rem; /* Adjust position for RTL */
+    margin-right: 0;
+    float: left; /* Push close button to the left in RTL */
+}
+
+/* Spinner للتحميل */
+.spinner-border {
+    margin-top: 20px;
+    width: 3rem;
+    height: 3rem;
+}
+
+@media print {
+    /* إخفاء العناصر غير المرغوب في طباعتها */
+    .no-print,
+    button,
+    .btn,
+    .actions-column,
+    .sidebar,
+    .navbar {
+        display: none !important;
+    }
+
+    /* إزالة الخلفيات والظلال الزائدة للطباعة على ورق الأبيض */
+    body, html {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    .payroll-list-container {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    /* تنسيق الجدول عند الطباعة */
+    .table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .table th, .table td {
+        border: 1px solid #dee2e6 !important;
+        padding: 8px !important;
+        text-align: center !important;
+    }
+}
+
+/* شارات الحالة */
+.badge {
+    padding: 0.5em 0.8em;
+    border-radius: 0.35rem;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+@media print {
+    /* إخفاء جميع العناصر التي تحمل الصنف "no-print" */
+    .no-print {
+        display: none !important;
+    }
+
+    /* إظهار العنوان المخصص للطباعة فقط */
+    .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* إزالة الظل والحدود من الجدول لطباعة أنظف */
+    .payroll-list-container,
+    .payroll-table {
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* إزالة أي خلفيات أو تنسيقات إضافية قد لا تظهر في الطباعة */
+    body {
+        background-color: #fff !important;
+    }
+}

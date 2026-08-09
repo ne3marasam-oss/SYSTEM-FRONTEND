@@ -1,0 +1,149 @@
+/* src/pages/ClosingEntriesPage.css */
+
+.closing-entries-page-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    direction: rtl; /* For RTL support */
+    text-align: right; /* For RTL support */
+}
+
+.closing-entries-page-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.closing-form-section, .closing-status-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.closing-form-section h3, .closing-status-section h3 {
+    color: #555;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group select,
+.form-group input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    direction: rtl; /* For RTL input */
+}
+
+.perform-closing-button {
+    background-color: #28a745; /* Green for action */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: block;
+}
+
+.perform-closing-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.perform-closing-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Messages styles */
+.status-message {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    direction: rtl;
+    text-align: right;
+}
+
+.status-message svg {
+    margin-left: 10px; /* Space between icon and text */
+    font-size: 1.5em;
+    min-width: 1.5em; /* Prevent text from overlapping icon */
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.no-data-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Table styles for closing status */
+.closing-status-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.closing-status-table th,
+.closing-status-table td {
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    text-align: right;
+}
+
+.closing-status-table th {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #333;
+}
+
+.closing-status-table tbody tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.closing-status-table tbody tr:hover {
+    background-color: #eef;
+}
